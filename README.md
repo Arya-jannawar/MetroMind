@@ -217,6 +217,40 @@ Built in one day at **OpenAI DevDay Exchange — Metro Hackathon Pune** — top-
 |---|---|
 | <img src="docs/assets/team-stage.jpg" alt="Team UrbanSync on stage at the DevDay Exchange community event" width="420" /> | <img src="docs/assets/wristbands.jpg" alt="Team UrbanSync wristbands during the build" width="420" /> |
 
+## 🎬 Media & moments
+
+<p align="center">
+  <img src="docs/assets/pcmc-metro-banner.svg" alt="A Purple Line metro glides through the night toward PCMC Bhavan — Codex Dayline, Pune Metro" width="100%" />
+</p>
+
+Thirteen frames and four clips from Codex Dayline — the dawn check-in, the build on board the
+Aqua Line, the stage, and the celebration after. Color-graded from the team's phone camera
+roll; full clips with sound live in [`docs/media/clips/`](docs/media/clips/).
+
+### 📸 Photo walk
+
+| | | |
+|---|---|---|
+| <img src="docs/media/gallery/01-auditorium-seating.jpg" alt="Dawn check-in at the auditorium" width="100%" /><sub>dawn check-in</sub> | <img src="docs/media/gallery/08-morning-briefing.jpg" alt="The morning briefing before boarding" width="100%" /><sub>the morning briefing</sub> | <img src="docs/media/gallery/12-station-banner.jpg" alt="Station banner at the boarding point" width="100%" /><sub>station banner, boarding point</sub> |
+| <img src="docs/media/gallery/07-inside-metro.jpg" alt="Building on board the Aqua Line" width="100%" /><sub>building on board the Aqua Line</sub> | <img src="docs/media/gallery/05-metro-banner.jpg" alt="Metro banner moment at the exit" width="100%" /><sub>banner moment at the exit</sub> | <img src="docs/media/gallery/09-near-lift.jpg" alt="Between sessions near the lift" width="100%" /><sub>between sessions</sub> |
+| <img src="docs/media/gallery/10-openai-host.jpg" alt="The OpenAI host on stage" width="100%" /><sub>the host on stage</sub> | <img src="docs/media/gallery/11-stage-background.jpg" alt="Stage backdrop before the demo" width="100%" /><sub>before the demo</sub> | <img src="docs/media/gallery/03-dinner-networking.jpg" alt="Dinner with the cohort" width="100%" /><sub>dinner with the cohort</sub> |
+
+| | |
+|---|---|
+| <img src="docs/media/gallery/06-group-foto.jpg" alt="The whole cohort in one frame" width="100%" /><sub>the whole crew</sub> | <img src="docs/media/gallery/02-cafe-networking.jpg" alt="Post-win café stop with the finalists" width="100%" /><sub>post-win café stop</sub> |
+| <img src="docs/media/gallery/04-exit-teaming.jpg" alt="Heading out, team intact" width="100%" /><sub>heading out, team intact</sub> | <img src="docs/media/gallery/13-team-on-stage.jpg" alt="Team UrbanSync on stage at DevDay Exchange" width="100%" /><sub>on stage at DevDay Exchange</sub> |
+
+### 🎞️ On-board clips
+
+Loops autoplay below; click any loop to open the full clip with sound.
+
+| | |
+|---|---|
+| [![The sprint begins on board](docs/media/clips/clip-hackathon-start.gif)](docs/media/clips/clip-hackathon-start.mp4) | [![Morning assembly at the station](docs/media/clips/clip-morning-start.gif)](docs/media/clips/clip-morning-start.mp4) |
+| **▶ the sprint begins** · full clip | **▶ morning assembly** · full clip |
+| [![Onboarding at the station](docs/media/clips/clip-station-onboarding.gif)](docs/media/clips/clip-station-onboarding.mp4) | [![The winner announcement](docs/media/clips/clip-winning-declare.gif)](docs/media/clips/clip-winning-declare.mp4) |
+| **▶ onboarding at the station** · full clip | **▶ the winner announcement** · full clip |
+
 ## ⚡ The contribution snake
 
 An animated snake circles the walls of this repo's contribution graph, regenerated on every
