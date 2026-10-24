@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="Team UrbanSync mark — a connected metro network">
+  <style>
+    .l-edge{stroke-dasharray:1 1;stroke-dashoffset:1;animation:draw .9s cubic-bezier(.4,0,.2,1) forwards}
+    .l-flow{opacity:0;animation:fade .7s ease-out 1.8s forwards,drift 1.5s linear infinite}
+    .l-node{transform-box:fill-box;transform-origin:center;transform:scale(0);animation:pop .45s cubic-bezier(.34,1.56,.64,1) forwards}
+    .l-hub{stroke-dasharray:1 1;stroke-dashoffset:1;animation:draw .8s ease-out .55s forwards}
+    .l-wave{transform-box:fill-box;transform-origin:center;animation:wave 3.2s ease-out infinite}
+    @keyframes draw{to{stroke-dashoffset:0}}
+    @keyframes pop{to{transform:scale(1)}}
+    @keyframes wave{0%{transform:scale(.55);opacity:.5}65%{opacity:0}100%{transform:scale(3.1);opacity:0}}
+    @keyframes drift{to{stroke-dashoffset:-.25}}
+    @keyframes fade{to{opacity:.55}}
+    @media (prefers-reduced-motion:reduce){
+      .l-edge,.l-hub{stroke-dasharray:none;stroke-dashoffset:0;animation:none}
+      .l-node{transform:none;animation:none}
+      .l-flow,.l-wave{animation:none}
+      .l-flow{opacity:.55}
+    }
+  </style>
+  <rect width="240" height="240" rx="28" fill="#0a0d11"/>
+  <g stroke="#29c8cf" stroke-width="2.4" stroke-linecap="round" opacity="0.72">
+    <line class="l-edge" pathLength="1" x1="120" y1="120" x2="120" y2="42" style="animation-delay:0ms"/>
+    <line class="l-edge" pathLength="1" x1="120" y1="120" x2="175.2" y2="64.8" style="animation-delay:65ms"/>
+    <line class="l-edge" pathLength="1" x1="120" y1="120" x2="198" y2="120" style="animation-delay:130ms"/>
+    <line class="l-edge" pathLength="1" x1="120" y1="120" x2="175.2" y2="175.2" style="animation-delay:195ms"/>
+    <line class="l-edge" pathLength="1" x1="120" y1="120" x2="120" y2="198" style="animation-delay:260ms"/>
+    <line class="l-edge" pathLength="1" x1="120" y1="120" x2="64.8" y2="175.2" style="animation-delay:325ms"/>
+    <line class="l-edge" pathLength="1" x1="120" y1="120" x2="42" y2="120" style="animation-delay:390ms"/>
+    <line class="l-edge" pathLength="1" x1="120" y1="120" x2="64.8" y2="64.8" style="animation-delay:455ms"/>
+    <line class="l-edge" pathLength="1" x1="120" y1="42" x2="175.2" y2="64.8" style="animation-delay:520ms"/>
+    <line class="l-edge" pathLength="1" x1="175.2" y1="64.8" x2="198" y2="120" style="animation-delay:585ms"/>
+    <line class="l-edge" pathLength="1" x1="198" y1="120" x2="175.2" y2="175.2" style="animation-delay:650ms"/>
+    <line class="l-edge" pathLength="1" x1="175.2" y1="175.2" x2="120" y2="198" style="animation-delay:715ms"/>
+    <line class="l-edge" pathLength="1" x1="120" y1="198" x2="64.8" y2="175.2" style="animation-delay:780ms"/>
+    <line class="l-edge" pathLength="1" x1="64.8" y1="175.2" x2="42" y2="120" style="animation-delay:845ms"/>
+    <line class="l-edge" pathLength="1" x1="42" y1="120" x2="64.8" y2="64.8" style="animation-delay:910ms"/>
+    <line class="l-edge" pathLength="1" x1="64.8" y1="64.8" x2="120" y2="42" style="animation-delay:975ms"/>
+    <line class="l-edge" pathLength="1" stroke="#1a6b70" stroke-width="1.8" x1="120" y1="42" x2="175.2" y2="175.2" style="animation-delay:1040ms"/>
+    <line class="l-edge" pathLength="1" stroke="#1a6b70" stroke-width="1.8" x1="120" y1="42" x2="64.8" y2="175.2" style="animation-delay:1105ms"/>
+    <line class="l-edge" pathLength="1" stroke="#1a6b70" stroke-width="1.8" x1="120" y1="198" x2="175.2" y2="64.8" style="animation-delay:1170ms"/>
+    <line class="l-edge" pathLength="1" stroke="#1a6b70" stroke-width="1.8" x1="120" y1="198" x2="64.8" y2="64.8" style="animation-delay:1235ms"/>
+  </g>
+  <g class="l-flow" stroke="#8ce8ec" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="0.045 0.205">
+    <line pathLength="1" x1="120" y1="120" x2="120" y2="42"/>
+    <line pathLength="1" x1="120" y1="120" x2="175.2" y2="64.8"/>
+    <line pathLength="1" x1="120" y1="120" x2="198" y2="120"/>
+    <line pathLength="1" x1="120" y1="120" x2="175.2" y2="175.2"/>
+    <line pathLength="1" x1="120" y1="120" x2="120" y2="198"/>
+    <line pathLength="1" x1="120" y1="120" x2="64.8" y2="175.2"/>
+    <line pathLength="1" x1="120" y1="120" x2="42" y2="120"/>
+    <line pathLength="1" x1="120" y1="120" x2="64.8" y2="64.8"/>
+  </g>
+  <circle class="l-wave" cx="120" cy="120" r="26" fill="none" stroke="#29c8cf" stroke-width="1.5" opacity="0" style="animation-delay:1.4s"/>
+  <circle class="l-wave" cx="120" cy="120" r="26" fill="none" stroke="#29c8cf" stroke-width="1.5" opacity="0" style="animation-delay:3s"/>
+  <g class="l-node" style="animation-delay:.72s"><circle cx="120" cy="42" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="120" cy="42" r="3" fill="#8ce8ec"/></g>
+  <g class="l-node" style="animation-delay:.78s"><circle cx="175.2" cy="64.8" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="175.2" cy="64.8" r="3" fill="#8ce8ec"/></g>
+  <g class="l-node" style="animation-delay:.84s"><circle cx="198" cy="120" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="198" cy="120" r="3" fill="#8ce8ec"/></g>
+  <g class="l-node" style="animation-delay:.9s"><circle cx="175.2" cy="175.2" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="175.2" cy="175.2" r="3" fill="#8ce8ec"/></g>
+  <g class="l-node" style="animation-delay:.96s"><circle cx="120" cy="198" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="120" cy="198" r="3" fill="#8ce8ec"/></g>
+  <g class="l-node" style="animation-delay:1.02s"><circle cx="64.8" cy="175.2" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="64.8" cy="175.2" r="3" fill="#8ce8ec"/></g>
+  <g class="l-node" style="animation-delay:1.08s"><circle cx="42" cy="120" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="42" cy="120" r="3" fill="#8ce8ec"/></g>
+  <g class="l-node" style="animation-delay:1.14s"><circle cx="64.8" cy="64.8" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="64.8" cy="64.8" r="3" fill="#8ce8ec"/></g>
+  <circle class="l-hub" cx="120" cy="120" r="21" fill="#0a0d11" stroke="#e9edf2" stroke-width="3.2" pathLength="1"/>
+  <g class="l-node" style="animation-delay:.95s">
+    <circle cx="120" cy="120" r="13" fill="none" stroke="#29c8cf" stroke-width="2.4"/>
+    <circle cx="120" cy="120" r="6" fill="#eafffb"/>
+  </g>
+</svg>

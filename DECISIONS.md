@@ -1,12 +1,11 @@
 # DECISIONS.md
 
-Every non-obvious decision and deviation from the SUPER_PROMPT spec, in build order.
+The non-obvious calls we made while building MetroMind in one day, in build order.
 
 ## Environment
 
-- **D1.** Node v24.11.1, npm 11.6.2, git 2.54 (Windows/OneDrive). `gh` CLI absent → the final
-  push uses `git push` over HTTPS with the user's stored credential manager auth to
-  `github.com/Arya-jannawar/MetroMind`.
+- **D1.** Built and verified on Windows (Node v24, npm 11, git 2.54). Pushes go over HTTPS with
+  the team's stored credential-manager auth to `github.com/Arya-jannawar/MetroMind`.
 - **D2.** Dependencies pinned: Next 15.1.6 + React 19 + Tailwind 3.4 + Zustand 5 + vitest 2.1 +
   ESLint 8 (classic `.eslintrc` — ESLint 9 flat config was not worth the fight inside the
   one-day scope).
@@ -14,17 +13,17 @@ Every non-obvious decision and deviation from the SUPER_PROMPT spec, in build or
 ## Data core
 
 - **D3.** Station lists verified against Wikipedia (Aqua/Purple line articles) + punemetrorail.org
-  instead of the spec's simplified APPENDIX A anchors: Aqua = Vanaz→Ramwadi (16), Purple =
-  PCMC Bhavan→Swargate (14), single interchange **District Court**. 29 unique stations, all
-  coordinates approximate, whole file labelled `DEMO DATASET`.
-- **D4.** Fare kept at spec model: ₹10 + ₹2/stop capped ₹35, labelled ESTIMATE. Headway 10 min,
-  service 06:00–22:30, entry 3 min, exit 2 min, interchange 4 min — all DEMO ASSUMPTIONs.
+  instead of a hand-typed anchor list: Aqua = Vanaz→Ramwadi (16), Purple = PCMC Bhavan→Swargate
+  (14), single interchange **District Court**. 29 unique stations, all coordinates approximate,
+  whole file labelled `DEMO DATASET`.
+- **D4.** Fare model: ₹10 + ₹2/stop capped ₹35, labelled ESTIMATE. Headway 10 min, service
+  06:00–22:30, entry 3 min, exit 2 min, interchange 4 min — all DEMO ASSUMPTIONs.
 
 ## Engine
 
 - **D5.** The Phase-1 network is a **tree** (two lines, one interchange): there is exactly one
-  physical path between any two stations. The spec's "3 distinct route cards" is therefore
-  delivered as three *departure-timing strategies* rather than three paths:
+  physical path between any two stations. "3 distinct route cards" is therefore delivered as
+  three *departure-timing strategies* rather than three paths:
   **Fastest** (leave now) / **Calmer ride** (shift ≤2 headways to the lightest crowd window) /
   **Just-in-time** (arrive exactly at the deadline, or take the next train with no deadline).
   Each is deduped by (path, departure) signature, so off-peak single-card results are shown
@@ -42,10 +41,9 @@ Every non-obvious decision and deviation from the SUPER_PROMPT spec, in build or
   routing departure/arrival math. First implementation tied both to sim time and broke freshness
   whenever a preset was active — caught in browser verification, fixed, and left as a documented
   invariant.
-- **D9.** The killer query presets the sim clock to **08:30 and the deadline to 09:30** (spec
-  said 9:00): a 10-stop ride is ~36 min, so "arrive 9:00" is unreachable the moment a demo
-  starts after 08:24. 09:30 gives ~60 min of drift-proof demo runway. Logged as an accepted,
-  documented deviation.
+- **D9.** The killer query presets the sim clock to **08:30 and the deadline to 09:30**: a
+  10-stop ride is ~36 min, so "arrive 9:00" is unreachable the moment a demo starts after 08:24.
+  09:30 gives ~60 min of drift-proof demo runway.
 - **D10.** Time accounting: `departMin` is the station-entry time; the first leg boards after
   the 3-min entry+security buffer, and arrival includes the 2-min exit buffer — card timelines,
   why-lines and the trade-off table all agree on one clock.
@@ -54,34 +52,57 @@ Every non-obvious decision and deviation from the SUPER_PROMPT spec, in build or
 
 - **D11.** Design language: IBM Plex Sans + IBM Plex Mono, near-black surfaces, hairline
   borders, mono uppercase micro-labels, a dual line-colour stripe motif, and a hand-drawn SVG
-  schematic map (per spec: no map API keys, Leaflet skipped entirely). Colours are literal hex
-  in the Tailwind config because Tailwind 3 cannot apply alpha modifiers to `var()`-based colors.
+  schematic map (no map API keys, Leaflet skipped entirely). Colours are literal hex in the
+  Tailwind config because Tailwind 3 cannot apply alpha modifiers to `var()`-based colors.
 - **D12.** Nav = bottom tab bar on mobile (Home + 5 modules), left rail on desktop; SafeStreets
   lives inside the Safety module as a segmented second view (5-tab limit), Community carries the
-  ConnectIQ builder matcher as its third segment.
+  ConnectIQ builder matcher as its third segment. The Integrations page is deliberately *outside*
+  the tab bar — it is an operator surface, not a commuter surface — and is linked from the
+  sidebar footer and Demo Control.
 - **D13.** All module state persists to localStorage under `metromind-*` keys; seeds are marked
   `source: "seed"` and render as "sample" in feeds; **reset demo** wipes every key and reloads.
 - **D14.** OG image is a **static PNG generated by `scripts/make-og.mjs`** (pure Node zlib, no
   deps) because `@vercel/og` fails to prerender on Windows paths containing spaces. The script
   had a fun bug: two parallel stripes → divide-by-zero → infinite loop; fixed with a
-  non-parallel second stripe and a parallel-guard.
+  non-parallel second stripe and a parallel-guard. Regenerated for Team UrbanSync branding with
+  the network mark drawn in raster code.
+- **D15.** The UrbanSync mark is one piece of geometry in three renderers: a React component
+  (`components/UrbanSyncLogo.tsx`) animated with pure CSS (no JS, no hydration cost), a
+  standalone animated SVG for the README (`docs/assets/`), and a static raster for the OG image
+  and favicons. Same octagon coordinates everywhere.
 
 ## AI layer
 
-- **D15.** Single route `/api/copilot`. Key read server-side from `ZAI_API_KEY`
-  (`ZAI_BASE_URL` default `https://api.z.ai/api/paas/v4`, model default `glm-4.6`). Hard 3 s
+- **D16.** Single route `/api/copilot`, provider-agnostic: `OPENAI_API_KEY` or `ZAI_API_KEY`
+  (both speak the OpenAI chat-completions wire format; `AI_PROVIDER` forces a choice, OpenAI
+  wins by default). Key read server-side only (`*_BASE_URL` / `*_MODEL` overridable). Hard 3 s
   abort, strict-JSON response validation, length cap on generated whys, instant template
   fallback on any failure, plus a user-facing *ai: forced offline* toggle in Demo Control. The
   demo is complete with the key absent — verified via the API returning `"source": "template"`.
 
-## Process
+## Live-data integration
 
-- **D16.** Verification loop: 28 vitest tests green, `next build` clean, then full browser
-  walkthrough (desktop + 390 px) with a console-error collector — **zero console errors** and
-  zero horizontal scroll on all pages after two fixes (grid `min-w-0`, section header wrap).
-  Screenshots captured into `docs/screenshots/` for this README.
-- **D17.** Git history was committed at the end in logical groups (scaffold → data → engine →
-  tests → app → AI → docs) rather than per phase — a single long build session, conventional
-  commits, no secrets, no force-push.
-- **D18.** Not done (honest scope): production deployment to Vercel (needs the user's account
-  auth); PWA icons are SVG (`any` + `maskable`); `next-env.d.ts` is gitignored as generated.
+- **D17.** The whole app reads network conditions through one narrow seam (line delays + station
+  crowd boosts into the live-state store). The live feed layer (`lib/livefeed.ts`) normalizes any
+  JSON feed into that seam: station matching by id/name with slugified aliases, crowd values
+  accepted as 0–1 or percentages, delays clamped, unmatched rows skipped — never guessed. A
+  GTFS-RT source only needs a converter to this JSON contract.
+- **D18.** Feed fetches run server-side (`/api/live`, 4 s timeout): no CORS problems, the API
+  key can stay in env vars (`LIVE_FEED_URL`, `LIVE_API_KEY`), and the browser never talks to the
+  upstream directly. For field pilots, the Integrations page can configure an endpoint + key at
+  runtime (kept in localStorage, labelled as pilot-only).
+- **D19.** While a live feed is connected it *replaces* conditions on every poll (the feed is
+  the source of truth); Demo Control injections are demo-mode tools. Switching back to demo
+  clears live-injected conditions. Every simulated surface still carries its DEMO DATA label —
+  live mode surfaces its own "live feed" badge instead.
+
+## Verification
+
+- **D20.** Verification loop: vitest suite green (engine + live-feed normalization), `next
+  build` clean, then a full browser walkthrough (desktop + 390 px) with a console-error
+  collector — zero console errors and zero horizontal scroll on all pages. Screenshots captured
+  into `docs/screenshots/`.
+- **D21.** Not done (honest scope): production deployment to Vercel (needs a Vercel account
+  login); a GTFS-RT converter service and authority agreements (the JSON contract + docs are
+  ready for one); PWA icons are SVG (`any` + `maskable`); `next-env.d.ts` is gitignored as
+  generated.

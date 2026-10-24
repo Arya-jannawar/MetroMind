@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" width="1200" height="280" role="img" aria-label="MetroMind — an AI commute copilot for the Pune Metro, by Team UrbanSync">
+  <defs>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.2" cy="1.2" r="1.2" fill="#1c242e"/>
+    </pattern>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#29c8cf" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#29c8cf" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#29c8cf" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .b-edge{stroke-dasharray:1 1;stroke-dashoffset:1;animation:draw .9s cubic-bezier(.4,0,.2,1) forwards}
+    .b-flow{opacity:0;animation:fade .7s ease-out 1.8s forwards,drift 1.5s linear infinite}
+    .b-node{transform-box:fill-box;transform-origin:center;transform:scale(0);animation:pop .45s cubic-bezier(.34,1.56,.64,1) forwards}
+    .b-hub{stroke-dasharray:1 1;stroke-dashoffset:1;animation:draw .8s ease-out .55s forwards}
+    .b-wave{transform-box:fill-box;transform-origin:center;animation:wave 3.2s ease-out infinite}
+    .b-bob{animation:bob 6s ease-in-out infinite}
+    .b-sweep{animation:sweep 7s ease-in-out infinite}
+    @keyframes draw{to{stroke-dashoffset:0}}
+    @keyframes pop{to{transform:scale(1)}}
+    @keyframes wave{0%{transform:scale(.55);opacity:.5}65%{opacity:0}100%{transform:scale(3.1);opacity:0}}
+    @keyframes drift{to{stroke-dashoffset:-.25}}
+    @keyframes fade{to{opacity:.55}}
+    @keyframes sweep{0%{transform:translateX(-180px) skewX(-18deg)}55%,100%{transform:translateX(1420px) skewX(-18deg)}}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+    @media (prefers-reduced-motion:reduce){
+      .b-edge,.b-hub{stroke-dasharray:none;stroke-dashoffset:0;animation:none}
+      .b-node{transform:none;animation:none}
+      .b-flow,.b-wave,.b-bob,.b-sweep{animation:none}
+      .b-flow{opacity:.55}
+    }
+  </style>
+
+  <rect width="1200" height="280" fill="#0a0d11"/>
+  <rect width="1200" height="280" fill="url(#dots)"/>
+  <rect x="0" y="0" width="4" height="280" fill="#29c8cf"/>
+  <rect x="6" y="0" width="2" height="280" fill="#a183ff" opacity="0.7"/>
+
+  <!-- floating event dots -->
+  <g opacity="0.78">
+    <circle class="b-bob" cx="1005" cy="86" r="28" fill="#2f6fed"/>
+    <circle class="b-bob" cx="1112" cy="146" r="19" fill="#00a883" style="animation-delay:.8s"/>
+    <circle class="b-bob" cx="1030" cy="216" r="23" fill="#f0731f" style="animation-delay:.4s"/>
+    <circle class="b-bob" cx="1128" cy="64" r="13" fill="#8b5cf6" style="animation-delay:1.2s"/>
+    <circle class="b-bob" cx="1166" cy="212" r="11" fill="#3a4653" style="animation-delay:.6s"/>
+  </g>
+
+  <!-- UrbanSync network mark -->
+  <g transform="translate(26,20)">
+    <g stroke="#29c8cf" stroke-width="2.4" stroke-linecap="round" opacity="0.72">
+      <line class="b-edge" pathLength="1" x1="120" y1="120" x2="120" y2="42"  style="animation-delay:0ms"/>
+      <line class="b-edge" pathLength="1" x1="120" y1="120" x2="175.2" y2="64.8" style="animation-delay:65ms"/>
+      <line class="b-edge" pathLength="1" x1="120" y1="120" x2="198" y2="120" style="animation-delay:130ms"/>
+      <line class="b-edge" pathLength="1" x1="120" y1="120" x2="175.2" y2="175.2" style="animation-delay:195ms"/>
+      <line class="b-edge" pathLength="1" x1="120" y1="120" x2="120" y2="198" style="animation-delay:260ms"/>
+      <line class="b-edge" pathLength="1" x1="120" y1="120" x2="64.8" y2="175.2" style="animation-delay:325ms"/>
+      <line class="b-edge" pathLength="1" x1="120" y1="120" x2="42" y2="120" style="animation-delay:390ms"/>
+      <line class="b-edge" pathLength="1" x1="120" y1="120" x2="64.8" y2="64.8" style="animation-delay:455ms"/>
+      <line class="b-edge" pathLength="1" x1="120" y1="42"  x2="175.2" y2="64.8" style="animation-delay:520ms"/>
+      <line class="b-edge" pathLength="1" x1="175.2" y1="64.8" x2="198" y2="120" style="animation-delay:585ms"/>
+      <line class="b-edge" pathLength="1" x1="198" y1="120" x2="175.2" y2="175.2" style="animation-delay:650ms"/>
+      <line class="b-edge" pathLength="1" x1="175.2" y1="175.2" x2="120" y2="198" style="animation-delay:715ms"/>
+      <line class="b-edge" pathLength="1" x1="120" y1="198" x2="64.8" y2="175.2" style="animation-delay:780ms"/>
+      <line class="b-edge" pathLength="1" x1="64.8" y1="175.2" x2="42" y2="120" style="animation-delay:845ms"/>
+      <line class="b-edge" pathLength="1" x1="42" y1="120" x2="64.8" y2="64.8" style="animation-delay:910ms"/>
+      <line class="b-edge" pathLength="1" x1="64.8" y1="64.8" x2="120" y2="42" style="animation-delay:975ms"/>
+      <line class="b-edge" pathLength="1" stroke="#1a6b70" stroke-width="1.8" x1="120" y1="42" x2="175.2" y2="175.2" style="animation-delay:1040ms"/>
+      <line class="b-edge" pathLength="1" stroke="#1a6b70" stroke-width="1.8" x1="120" y1="42" x2="64.8" y2="175.2" style="animation-delay:1105ms"/>
+      <line class="b-edge" pathLength="1" stroke="#1a6b70" stroke-width="1.8" x1="120" y1="198" x2="175.2" y2="64.8" style="animation-delay:1170ms"/>
+      <line class="b-edge" pathLength="1" stroke="#1a6b70" stroke-width="1.8" x1="120" y1="198" x2="64.8" y2="64.8" style="animation-delay:1235ms"/>
+    </g>
+    <g class="b-flow" stroke="#8ce8ec" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="0.045 0.205">
+      <line pathLength="1" x1="120" y1="120" x2="120" y2="42"/>
+      <line pathLength="1" x1="120" y1="120" x2="175.2" y2="64.8"/>
+      <line pathLength="1" x1="120" y1="120" x2="198" y2="120"/>
+      <line pathLength="1" x1="120" y1="120" x2="175.2" y2="175.2"/>
+      <line pathLength="1" x1="120" y1="120" x2="120" y2="198"/>
+      <line pathLength="1" x1="120" y1="120" x2="64.8" y2="175.2"/>
+      <line pathLength="1" x1="120" y1="120" x2="42" y2="120"/>
+      <line pathLength="1" x1="120" y1="120" x2="64.8" y2="64.8"/>
+    </g>
+    <circle class="b-wave" cx="120" cy="120" r="26" fill="none" stroke="#29c8cf" stroke-width="1.5" opacity="0" style="animation-delay:1.4s"/>
+    <circle class="b-wave" cx="120" cy="120" r="26" fill="none" stroke="#29c8cf" stroke-width="1.5" opacity="0" style="animation-delay:3s"/>
+    <g class="b-node" style="animation-delay:.72s"><circle cx="120" cy="42" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="120" cy="42" r="3" fill="#8ce8ec"/></g>
+    <g class="b-node" style="animation-delay:.78s"><circle cx="175.2" cy="64.8" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="175.2" cy="64.8" r="3" fill="#8ce8ec"/></g>
+    <g class="b-node" style="animation-delay:.84s"><circle cx="198" cy="120" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="198" cy="120" r="3" fill="#8ce8ec"/></g>
+    <g class="b-node" style="animation-delay:.9s"><circle cx="175.2" cy="175.2" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="175.2" cy="175.2" r="3" fill="#8ce8ec"/></g>
+    <g class="b-node" style="animation-delay:.96s"><circle cx="120" cy="198" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="120" cy="198" r="3" fill="#8ce8ec"/></g>
+    <g class="b-node" style="animation-delay:1.02s"><circle cx="64.8" cy="175.2" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="64.8" cy="175.2" r="3" fill="#8ce8ec"/></g>
+    <g class="b-node" style="animation-delay:1.08s"><circle cx="42" cy="120" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="42" cy="120" r="3" fill="#8ce8ec"/></g>
+    <g class="b-node" style="animation-delay:1.14s"><circle cx="64.8" cy="64.8" r="8.5" fill="#0a0d11" stroke="#29c8cf" stroke-width="2.6"/><circle cx="64.8" cy="64.8" r="3" fill="#8ce8ec"/></g>
+    <circle class="b-hub" cx="120" cy="120" r="21" fill="#0a0d11" stroke="#e9edf2" stroke-width="3.2" pathLength="1"/>
+    <g class="b-node" style="animation-delay:.95s">
+      <circle cx="120" cy="120" r="13" fill="none" stroke="#29c8cf" stroke-width="2.4"/>
+      <circle cx="120" cy="120" r="6" fill="#eafffb"/>
+    </g>
+  </g>
+
+  <!-- wordmark -->
+  <text x="330" y="118" font-family="'IBM Plex Sans','Segoe UI',Verdana,sans-serif" font-size="54" font-weight="700" letter-spacing="2" fill="#e9edf2">METRO<tspan fill="#29c8cf">MIND</tspan></text>
+  <text x="332" y="154" font-family="'IBM Plex Sans','Segoe UI',Verdana,sans-serif" font-size="19" fill="#a7b2bf">An AI commute copilot for the Pune Metro — state the goal, read the reasoning.</text>
+
+  <!-- chips -->
+  <g font-family="'IBM Plex Mono',ui-monospace,Consolas,monospace" font-size="13" letter-spacing="1.2">
+    <rect x="332" y="176" width="172" height="30" rx="15" fill="#29c8cf" fill-opacity="0.08" stroke="#29c8cf" stroke-opacity="0.5"/>
+    <text x="352" y="196" fill="#5adde2">TEAM URBANSYNC</text>
+    <rect x="518" y="176" width="404" height="30" rx="15" fill="#161d26" stroke="#232c37"/>
+    <text x="538" y="196" fill="#a7b2bf">OPENAI DEVDAY EXCHANGE · METRO HACKATHON PUNE</text>
+  </g>
+
+  <text x="332" y="248" font-family="'IBM Plex Sans','Segoe UI',Verdana,sans-serif" font-size="15" fill="#77828f">Arya Jannawar · Siddhant Pardeshi · Avani Jannawar</text>
+
+  <!-- shimmer -->
+  <rect class="b-sweep" x="-160" y="-20" width="130" height="320" fill="url(#sweep)"/>
+</svg>
