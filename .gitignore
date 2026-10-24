@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# next
+.next/
+out/
+next-env.d.ts
+
+# env & secrets
+.env
+.env.local
+.env*.local
+
+# misc
+*.tsbuildinfo
+.DS_Store
+npm-debug.log*
+.vercel
+.data/
