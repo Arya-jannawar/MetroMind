@@ -17,6 +17,17 @@ template mode; the full-stack server adds GLM explanations and the live feed)
 > above; the full-stack server (`npm start`) upgrades to GLM explanations and a live feed
 > without code changes (see [Going live](#going-live-operators--authorities)).
 
+<p align="center">
+  <a href="https://github.com/Arya-jannawar/MetroMind/releases/download/v1.0.0/metromind-walkthrough.mp4">
+    <img src="docs/assets/video-thumb.png" alt="Watch the MetroMind full feature walkthrough" width="620" />
+  </a>
+</p>
+
+<p align="center"><b>▶ Full feature walkthrough — 4:16, narrated.</b>
+<a href="https://github.com/Arya-jannawar/MetroMind/releases/tag/v1.0.0">Watch the video</a>
+· chapters: copilot killer query, the live disruption moment, CrowdCast, Rescue Grid,
+Community, the multilingual guide, and connecting a live feed.</p>
+
 ---
 
 ## Problem
