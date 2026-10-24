@@ -174,6 +174,10 @@ Aqua Line, by:
 
 **Arya Jannawar** · **Siddhant Pardeshi** · **Avani Jannawar**
 
+<p align="center">
+  <img src="docs/assets/event-banner.svg" alt="OpenAI DevDay Exchange Community Event — Metro Hackathon: Pune" width="100%" />
+</p>
+
 | On stage at DevDay Exchange | Wristbands on, mid-sprint |
 |---|---|
 | <img src="docs/assets/team-stage.jpg" alt="Team UrbanSync on stage at the DevDay Exchange community event" width="420" /> | <img src="docs/assets/wristbands.jpg" alt="Team UrbanSync wristbands during the build" width="420" /> |
