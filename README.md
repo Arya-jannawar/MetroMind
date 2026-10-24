@@ -223,22 +223,27 @@ Built in one day at **OpenAI DevDay Exchange — Metro Hackathon Pune** — top-
   <img src="docs/assets/pcmc-metro-banner.svg" alt="A Purple Line metro glides through the night toward PCMC Bhavan — Codex Dayline, Pune Metro" width="100%" />
 </p>
 
-Thirteen frames and four clips from Codex Dayline — the dawn check-in, the build on board the
-Aqua Line, the stage, and the celebration after. Color-graded from the team's phone camera
+Twenty-four frames and four clips from Codex Dayline — the dawn check-in, the build on board
+the Aqua Line, the stage, and the celebration after. Color-graded from the team's phone camera
 roll; full clips with sound live in [`docs/media/clips/`](docs/media/clips/).
 
 ### 📸 Photo walk
 
 | | | |
 |---|---|---|
-| <img src="docs/media/gallery/01-auditorium-seating.jpg" alt="Dawn check-in at the auditorium" width="100%" /><sub>dawn check-in</sub> | <img src="docs/media/gallery/08-morning-briefing.jpg" alt="The morning briefing before boarding" width="100%" /><sub>the morning briefing</sub> | <img src="docs/media/gallery/12-station-banner.jpg" alt="Station banner at the boarding point" width="100%" /><sub>station banner, boarding point</sub> |
-| <img src="docs/media/gallery/07-inside-metro.jpg" alt="Building on board the Aqua Line" width="100%" /><sub>building on board the Aqua Line</sub> | <img src="docs/media/gallery/05-metro-banner.jpg" alt="Metro banner moment at the exit" width="100%" /><sub>banner moment at the exit</sub> | <img src="docs/media/gallery/09-near-lift.jpg" alt="Between sessions near the lift" width="100%" /><sub>between sessions</sub> |
-| <img src="docs/media/gallery/10-openai-host.jpg" alt="The OpenAI host on stage" width="100%" /><sub>the host on stage</sub> | <img src="docs/media/gallery/11-stage-background.jpg" alt="Stage backdrop before the demo" width="100%" /><sub>before the demo</sub> | <img src="docs/media/gallery/03-dinner-networking.jpg" alt="Dinner with the cohort" width="100%" /><sub>dinner with the cohort</sub> |
+| <img src="docs/media/gallery/01-auditorium-seating.jpg" alt="Dawn check-in at the auditorium" width="100%" /><sub>dawn check-in</sub> | <img src="docs/media/gallery/02-auditorium-builds.jpg" alt="The auditorium fills up with builders" width="100%" /><sub>the room fills up</sub> | <img src="docs/media/gallery/03-morning-briefing.jpg" alt="The morning briefing before boarding" width="100%" /><sub>the morning briefing</sub> |
+| <img src="docs/media/gallery/04-station-banner.jpg" alt="Station banner at the boarding point" width="100%" /><sub>station banner, boarding point</sub> | <img src="docs/media/gallery/05-station-click.jpg" alt="Clicks on the platform" width="100%" /><sub>platform clicks</sub> | <img src="docs/media/gallery/06-inside-metro.jpg" alt="Building on board the Aqua Line" width="100%" /><sub>building on board the Aqua Line</sub> |
+| <img src="docs/media/gallery/07-inside-metro-sprint.jpg" alt="The sprint, carriage-wide" width="100%" /><sub>the sprint, carriage-wide</sub> | <img src="docs/media/gallery/08-metro-banner.jpg" alt="Metro banner moment at the exit" width="100%" /><sub>banner moment</sub> | <img src="docs/media/gallery/09-exit-banner.jpg" alt="The banner at the exit" width="100%" /><sub>banner at the exit</sub> |
+| <img src="docs/media/gallery/10-near-lift.jpg" alt="Between sessions near the lift" width="100%" /><sub>between sessions</sub> | <img src="docs/media/gallery/11-openai-host.jpg" alt="The OpenAI host on stage" width="100%" /><sub>the host on stage</sub> | <img src="docs/media/gallery/12-stage-team-click.jpg" alt="Team click at the stage" width="100%" /><sub>team click at the stage</sub> |
+| <img src="docs/media/gallery/13-dinner-networking.jpg" alt="Dinner with the cohort" width="100%" /><sub>dinner with the cohort</sub> | <img src="docs/media/gallery/14-group-foto.jpg" alt="The whole cohort in one frame" width="100%" /><sub>the whole crew</sub> | <img src="docs/media/gallery/15-exit-group-foto.jpg" alt="One more group frame at the exit" width="100%" /><sub>one more frame at the exit</sub> |
+| <img src="docs/media/gallery/16-event-swags.jpg" alt="The event swag haul" width="100%" /><sub>the swag haul</sub> | <img src="docs/media/gallery/17-cafe-networking.jpg" alt="Post-win café stop with the finalists" width="100%" /><sub>post-win café stop</sub> | |
 
 | | |
 |---|---|
-| <img src="docs/media/gallery/06-group-foto.jpg" alt="The whole cohort in one frame" width="100%" /><sub>the whole crew</sub> | <img src="docs/media/gallery/02-cafe-networking.jpg" alt="Post-win café stop with the finalists" width="100%" /><sub>post-win café stop</sub> |
-| <img src="docs/media/gallery/04-exit-teaming.jpg" alt="Heading out, team intact" width="100%" /><sub>heading out, team intact</sub> | <img src="docs/media/gallery/13-team-on-stage.jpg" alt="Team UrbanSync on stage at DevDay Exchange" width="100%" /><sub>on stage at DevDay Exchange</sub> |
+| <img src="docs/media/gallery/18-morning-circle.jpg" alt="The morning huddle" width="100%" /><sub>the morning huddle</sub> | <img src="docs/media/gallery/19-inside-metro-teambuild.jpg" alt="Team building inside the metro, shoulder to shoulder" width="100%" /><sub>the build, shoulder to shoulder</sub> |
+| <img src="docs/media/gallery/20-exit-banner-team.jpg" alt="Team click under the exit banner" width="100%" /><sub>team click under the banner</sub> | <img src="docs/media/gallery/21-stage-front.jpg" alt="At the front of the stage" width="100%" /><sub>front of the stage</sub> |
+| <img src="docs/media/gallery/22-stage-click.jpg" alt="A quick click at the stage" width="100%" /><sub>a quick click at the stage</sub> | <img src="docs/media/gallery/23-exit-teaming.jpg" alt="Heading out, team intact" width="100%" /><sub>heading out, team intact</sub> |
+| <img src="docs/media/gallery/24-team-day-one.jpg" alt="Team UrbanSync, day one" width="100%" /><sub>Team UrbanSync, day one</sub> | |
 
 ### 🎞️ On-board clips
 
