@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { ChevronDown, Terminal } from "lucide-react";
 import { resetDemo } from "@/store/bootstrap";
+import { useIntegrationsStore } from "@/store/integrations";
 import { useLiveStore } from "@/store/live";
 
 // God-mode demo control. Intentionally visible and clearly badged: the
@@ -44,6 +46,8 @@ function Panel() {
   const toggleAi = useLiveStore((s) => s.toggleAi);
   const disruptions = useLiveStore((s) => s.disruptions);
   const spikes = useLiveStore((s) => s.spikes);
+  const feedMode = useIntegrationsStore((s) => s.mode);
+  const feedError = useIntegrationsStore((s) => s.lastError);
 
   const activeCount = disruptions.length + spikes.filter((k) => k.until > Date.now()).length;
 
@@ -58,6 +62,16 @@ function Panel() {
         <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-warn">
           Demo control
         </span>
+        {feedMode === "live" && !feedError && (
+          <span className="flex items-center gap-1 rounded bg-ok/15 px-1.5 py-0.5 font-mono text-[10px] text-ok">
+            <span className="dot animate-pulse-soft bg-ok" /> live feed
+          </span>
+        )}
+        {feedMode === "live" && feedError && (
+          <span className="rounded bg-danger/15 px-1.5 py-0.5 font-mono text-[10px] text-danger">
+            feed error
+          </span>
+        )}
         {activeCount > 0 && (
           <span className="num rounded bg-warn/15 px-1.5 py-0.5 text-[10px] text-warn">
             {activeCount} active
@@ -82,6 +96,12 @@ function Panel() {
           <DbButton onClick={() => setPreset("now")}>sim → now</DbButton>
           <DbButton onClick={clearDisruptions}>clear conditions</DbButton>
           <DbButton onClick={toggleAi}>{aiOffline ? "ai: forced offline" : "ai: auto"}</DbButton>
+          <Link
+            href="/integrations"
+            className="rounded border border-line px-2.5 py-1 font-mono text-[11px] text-dim transition-colors hover:bg-surface2 hover:text-ink"
+          >
+            live feed / api keys →
+          </Link>
           <DbButton tone="danger" onClick={resetDemo}>
             reset demo
           </DbButton>

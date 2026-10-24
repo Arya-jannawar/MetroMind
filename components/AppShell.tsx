@@ -7,6 +7,7 @@ import { Compass, HandHeart, LayoutDashboard, Route, Users } from "lucide-react"
 import ClientOnly from "./ClientOnly";
 import Clock from "./Clock";
 import DemoBar from "./DemoBar";
+import LiveFeedSync from "./LiveFeedSync";
 import StatusStrip from "./StatusStrip";
 import Wordmark from "./Wordmark";
 import { resetDemo, useSeedOnce } from "@/store/bootstrap";
@@ -74,7 +75,14 @@ function SideRail() {
       <div className="border-t border-line-soft px-5 py-4">
         <p className="kicker mb-2">Network clock</p>
         <Clock />
-        <p className="mt-4 text-[11px] leading-relaxed text-muted">
+        <Link
+          href="/integrations"
+          className="mt-4 flex items-center justify-between text-[11px] text-muted transition-colors hover:text-aqua"
+        >
+          <span>data source &amp; API keys</span>
+          <span aria-hidden>→</span>
+        </Link>
+        <p className="mt-2 text-[11px] leading-relaxed text-muted">
           Demo dataset. Fares, headways and amenities are estimates pending official Maha-Metro data.
         </p>
         <button onClick={resetDemo} className="btn-quiet mt-3 h-7 px-2 font-mono text-[11px]">
@@ -143,6 +151,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       <MobileHeader />
       <main className="px-4 pb-32 pt-5 lg:ml-[228px] lg:px-8 lg:pb-20 lg:pt-8">{children}</main>
       <TabBar />
+      <LiveFeedSync />
       <DemoBar />
       <footer className="hidden px-8 pb-8 pt-2 text-[11px] leading-relaxed text-muted lg:ml-[228px] lg:block">
         {META.label} — compiled {META.compiled} from {META.sources.join(" · ")}.

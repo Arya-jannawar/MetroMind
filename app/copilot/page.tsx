@@ -46,7 +46,7 @@ function StationSelect({
 
 interface AiWhy {
   why: string;
-  source: "glm" | "template";
+  source: "ai" | "template";
 }
 
 const strategyWord = (s: Strategy) =>
@@ -174,7 +174,7 @@ function CopilotInner() {
       signal: controller.signal,
     })
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
-      .then((data: { source: "glm" | "template"; plans: Record<string, { why: string }> }) => {
+      .then((data: { source: "ai" | "template"; plans: Record<string, { why: string }> }) => {
         setWhys((cur) => {
           const merged = { ...cur };
           for (const [id, w] of Object.entries(data.plans ?? {})) {

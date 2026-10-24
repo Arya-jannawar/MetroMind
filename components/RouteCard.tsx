@@ -21,7 +21,7 @@ export default function RouteCard({
   plan: RoutePlan;
   destId: string;
   why: string;
-  aiSource?: "glm" | "template";
+  aiSource?: "ai" | "template";
   dimmed?: boolean;
   dimReason?: string;
 }) {
@@ -114,9 +114,9 @@ export default function RouteCard({
             Why this route
           </span>
           {why}
-          {aiSource === "glm" && (
+          {aiSource === "ai" && (
             <span className="ml-1.5 font-mono text-[9.5px] uppercase tracking-widest text-grape">
-              · GLM
+              · ai
             </span>
           )}
           {aiSource === "template" && (

@@ -2,10 +2,11 @@ import { NextResponse } from "next/server";
 import { minToHHMM } from "@/lib/time";
 
 // ---------------------------------------------------------------------------
-// /api/copilot — the ONLY AI route. Reads ZAI_API_KEY from the server env,
-// never ships it to the client. Any failure (missing key, slow >3s, bad
-// response) falls back instantly to deterministic templates. The demo never
-// depends on AI; AI is an upgrade.
+// /api/copilot — the ONLY AI route. Reads the provider key from the server
+// env (OPENAI_API_KEY or ZAI_API_KEY), never ships it to the client. Both
+// providers speak the OpenAI chat-completions wire format. Any failure
+// (missing key, slow >3s, bad response) falls back instantly to deterministic
+// templates. The demo never depends on AI; AI is an upgrade.
 // ---------------------------------------------------------------------------
 
 export const runtime = "nodejs";
@@ -53,16 +54,47 @@ function templateWhy(p: PlanIn, body: Body): string {
   return bits.join(", ") + ".";
 }
 
-async function callGlm(body: Body, key: string, baseUrl: string, model: string) {
+interface ProviderConfig {
+  key: string;
+  baseUrl: string;
+  model: string;
+  label: string;
+}
+
+/** Which AI provider is configured? OPENAI_API_KEY wins unless AI_PROVIDER says otherwise. */
+function providerConfig(): ProviderConfig | null {
+  const zai: ProviderConfig | null = process.env.ZAI_API_KEY
+    ? {
+        key: process.env.ZAI_API_KEY,
+        baseUrl: process.env.ZAI_BASE_URL ?? "https://api.z.ai/api/paas/v4",
+        model: process.env.ZAI_MODEL ?? "glm-4.6",
+        label: "glm",
+      }
+    : null;
+  const openai: ProviderConfig | null = process.env.OPENAI_API_KEY
+    ? {
+        key: process.env.OPENAI_API_KEY,
+        baseUrl: process.env.OPENAI_BASE_URL ?? "https://api.openai.com/v1",
+        model: process.env.OPENAI_MODEL ?? "gpt-4o-mini",
+        label: "openai",
+      }
+    : null;
+  const explicit = (process.env.AI_PROVIDER ?? "").toLowerCase();
+  if (explicit === "openai") return openai ?? zai;
+  if (explicit === "zai") return zai ?? openai;
+  return openai ?? zai;
+}
+
+async function callChat(body: Body, p: ProviderConfig) {
   const plans = body.plans ?? [];
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 3000); // hard 3s budget
   try {
-    const res = await fetch(`${baseUrl}/chat/completions`, {
+    const res = await fetch(`${p.baseUrl}/chat/completions`, {
       method: "POST",
-      headers: { "content-type": "application/json", authorization: `Bearer ${key}` },
+      headers: { "content-type": "application/json", authorization: `Bearer ${p.key}` },
       body: JSON.stringify({
-        model,
+        model: p.model,
         temperature: 0.4,
         max_tokens: 400,
         messages: [
@@ -97,10 +129,10 @@ async function callGlm(body: Body, key: string, baseUrl: string, model: string) 
       }),
       signal: controller.signal,
     });
-    if (!res.ok) throw new Error(`glm ${res.status}`);
+    if (!res.ok) throw new Error(`ai ${res.status}`);
     const data = await res.json();
     const text: string | undefined = data?.choices?.[0]?.message?.content;
-    if (!text) throw new Error("glm empty");
+    if (!text) throw new Error("ai empty");
     const jsonText = text.slice(text.indexOf("{"), text.lastIndexOf("}") + 1);
     const parsed = JSON.parse(jsonText) as { plans?: { id: string; why: string }[] };
     const out: Record<string, { why: string }> = {};
@@ -109,7 +141,7 @@ async function callGlm(body: Body, key: string, baseUrl: string, model: string) 
         out[p.id] = { why: p.why };
       }
     }
-    if (Object.keys(out).length === 0) throw new Error("glm unusable");
+    if (Object.keys(out).length === 0) throw new Error("ai unusable");
     return out;
   } finally {
     clearTimeout(timer);
@@ -126,12 +158,10 @@ export async function POST(req: Request) {
 
   const plans = body.plans ?? [];
 
-  // Offline mode requested client-side, or no key configured: templates, 200 OK.
-  const key = process.env.ZAI_API_KEY;
-  const baseUrl = process.env.ZAI_BASE_URL ?? "https://api.z.ai/api/paas/v4";
-  const model = process.env.ZAI_MODEL ?? "glm-4.6";
+  // Offline mode requested client-side, or no provider key configured: templates, 200 OK.
+  const provider = providerConfig();
 
-  if (body.mode === "offline" || !key) {
+  if (body.mode === "offline" || !provider) {
     return NextResponse.json({
       source: "template",
       plans: Object.fromEntries(plans.map((p) => [p.id, { why: templateWhy(p, body) }])),
@@ -139,8 +169,8 @@ export async function POST(req: Request) {
   }
 
   try {
-    const whys = await callGlm(body, key, baseUrl, model);
-    return NextResponse.json({ source: "glm", plans: whys });
+    const whys = await callChat(body, provider);
+    return NextResponse.json({ source: "ai", provider: provider.label, plans: whys });
   } catch {
     // rate-limited, slow, or erroring → deterministic fallback, demo continues
     return NextResponse.json({

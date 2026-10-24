@@ -20,6 +20,10 @@ interface LiveState {
   clearDisruptions: () => void;
   toggleAi: () => void;
   clearAll: () => void;
+  applyLiveFeed: (
+    delays: Array<{ lineId: LineId; delayMin: number }>,
+    boosts: Array<{ stationId: string; boost: number }>,
+  ) => void;
 }
 
 /** Offset that maps the real clock onto 08:30 (morning peak build-up). */
@@ -77,6 +81,24 @@ export const useLiveStore = create<LiveState>()(
       toggleAi: () => set((s) => ({ aiOffline: !s.aiOffline })),
       clearAll: () =>
         set({ disruptions: [], spikes: [], offsetMin: 0, preset: "now", simNow: Date.now() }),
+      // A live feed replaces (not accumulates) conditions — the feed is the
+      // source of truth while it is connected. Next poll refreshes spikes.
+      applyLiveFeed: (delays, boosts) =>
+        set(() => ({
+          disruptions: delays.map((d) => ({
+            id: uid("live-dis"),
+            lineId: d.lineId,
+            kind: "delay" as const,
+            minutes: d.delayMin,
+            createdAt: Date.now(),
+          })),
+          spikes: boosts.map((b) => ({
+            id: uid("live-spike"),
+            stationId: b.stationId,
+            boost: b.boost,
+            until: Date.now() + 15 * 60000,
+          })),
+        })),
     }),
     {
       name: "metromind-live",
