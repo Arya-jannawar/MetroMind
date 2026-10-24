@@ -220,7 +220,7 @@ function CopilotInner() {
         title="State the goal. Read the reasoning."
         lede="Routes are computed on-device from the demo network graph, then explained: what each one optimises, what it costs, where it gets crowded."
         aside={
-          <button onClick={loadKiller} className="btn-grape h-9 text-[13px]">
+          <button onClick={loadKiller} data-testid="run-killer" className="btn-grape h-9 text-[13px]">
             <Wand2 size={14} /> run the killer query
           </button>
         }

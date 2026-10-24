@@ -98,15 +98,15 @@ scope note (what "production ready" does and does not include) are on `/integrat
 
 ```mermaid
 flowchart LR
-  A[data/pune-metro.json + seeds<br/>DEMO DATASET] --> B[lib/ engine<br/>graph · routing · fare · crowd · triage · explain]
-  B --> C[Zustand stores<br/>live · crowd · rescue · community · safe · prefs · integrations<br/>localStorage-persisted]
-  C --> D[App Router pages<br/>home · copilot · crowd · safety · guide · community · station · integrations]
-  B --> E[/api/copilot<br/>GLM via z.ai · 3s timeout]
-  E -->|failure / no key| F[template explanations<br/>offline AI mode]
+  A["data/pune-metro.json + seeds<br/>DEMO DATASET"] --> B["lib/ engine<br/>graph · routing · fare · crowd · triage · explain"]
+  B --> C["Zustand stores<br/>live · crowd · rescue · community · safe · prefs · integrations<br/>localStorage-persisted"]
+  C --> D["App Router pages<br/>home · copilot · crowd · safety · guide · community · station · integrations"]
+  B --> E["/api/copilot<br/>OpenAI / GLM · 3s timeout"]
+  E -->|"failure / no key"| F["template explanations<br/>offline AI mode"]
   E --> D
-  G[Demo Control bar<br/>inject delays · spikes · sim clock] --> C
-  H[/api/live<br/>LIVE_FEED_URL + LIVE_API_KEY<br/>4s timeout · normalization] -->|delays + crowd| C
-  I[Integrations page<br/>pilot endpoint + key · poll interval] --> H
+  G["Demo Control bar<br/>inject delays · spikes · sim clock"] --> C
+  H["/api/live<br/>LIVE_FEED_URL + LIVE_API_KEY<br/>4s timeout · normalization"] -->|"delays + crowd"| C
+  I["Integrations page<br/>pilot endpoint + key · poll interval"] --> H
 ```
 
 The engine in `lib/` is pure TypeScript with no framework imports — 34 vitest tests cover
@@ -145,21 +145,6 @@ from the feed integration above.
 
 Deploy on Vercel: import the repo, add `OPENAI_API_KEY` or `ZAI_API_KEY` (+ `LIVE_FEED_URL` /
 `LIVE_API_KEY` when going live) as env vars, deploy. `npx vercel` works too.
-
-## 90-second demo script
-
-1. **0:00–0:10** — *"Pune's metro is growing faster than the information riders need. MetroMind
-   closes that gap — one app, live conditions, plain-language reasoning."*
-2. **0:10–0:35** — Copilot → **run the killer query**. Read one *why* line aloud. Open the
-   trade-off table; tap a station chip on the map → station page.
-3. **0:35–0:55** — THE MOMENT: Demo Control → *aqua +15′ delay*. Cards recompute live (+15 min
-   chips, updated arrivals). Press it again → the **Deadline broken** panel: *"earliest arrival is
-   now 09:36 — the engine won't pretend otherwise."* Relax the deadline → instant re-plan.
-4. **0:55–1:15** — CrowdCast → one-tap *Packed* report → flash + heatmap. Back in Copilot the
-   badge matches. Then Safety: ranked triage queue with recommended actions; Community: builder
-   match cards.
-5. **1:15–1:30** — *"Offline-first, honest demo data, engine is unit-tested, ready for a real
-   Maha-Metro feed."*
 
 ## Roadmap
 

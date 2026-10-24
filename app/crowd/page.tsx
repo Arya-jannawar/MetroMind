@@ -130,6 +130,7 @@ export default function CrowdPage() {
                   <button
                     key={r.level}
                     onClick={() => report(r.level)}
+                    data-testid={`report-${r.level}`}
                     className="rounded-card border px-3 py-4 text-center transition-transform hover:scale-[1.02]"
                     style={{ borderColor: `${meta.color}44`, background: meta.bg }}
                   >

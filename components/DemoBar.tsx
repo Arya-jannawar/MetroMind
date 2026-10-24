@@ -15,10 +15,12 @@ function DbButton({
   onClick,
   children,
   tone = "ghost",
+  testId,
 }: {
   onClick: () => void;
   children: React.ReactNode;
   tone?: "ghost" | "aqua" | "danger";
+  testId?: string;
 }) {
   const cls =
     tone === "aqua"
@@ -29,6 +31,7 @@ function DbButton({
   return (
     <button
       onClick={onClick}
+      data-testid={testId}
       className={`rounded border px-2.5 py-1 font-mono text-[11px] transition-colors ${cls}`}
     >
       {children}
@@ -56,6 +59,7 @@ function Panel() {
       <button
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
+        data-testid="demo-toggle"
         className="flex w-full items-center gap-2 px-3.5 py-2"
       >
         <Terminal size={13} className="text-warn" />
@@ -88,7 +92,7 @@ function Panel() {
 
       {open && (
         <div className="flex flex-wrap items-center gap-1.5 border-t border-warn/20 px-3.5 py-2.5">
-          <DbButton onClick={() => injectDelay("aqua", 15)}>aqua +15′ delay</DbButton>
+          <DbButton testId="demo-aqua" onClick={() => injectDelay("aqua", 15)}>aqua +15′ delay</DbButton>
           <DbButton onClick={() => injectDelay("purple", 10)}>purple +10′ delay</DbButton>
           <DbButton onClick={() => injectSpike("shivaji-nagar")}>crowd spike @ Shivaji Nagar</DbButton>
           <DbButton onClick={() => setPreset("morning-peak")}>sim 08:30</DbButton>
