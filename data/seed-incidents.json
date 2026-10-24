@@ -1,0 +1,45 @@
+{
+  "$meta": "DEMO DATA — seeded incidents for the Rescue Grid control-room view. Ages are relative minutes before first load.",
+  "incidents": [
+    {
+      "id": "inc-seed-1",
+      "type": "lost-child",
+      "stationId": "swargate",
+      "note": "Child (~6 yrs) separated from parents near north lift lobby.",
+      "peopleAffected": 2,
+      "minutesAgo": 3,
+      "status": "open",
+      "source": "seed"
+    },
+    {
+      "id": "inc-seed-2",
+      "type": "medical",
+      "stationId": "pune-railway-station",
+      "note": "Elderly passenger dizzy on up-platform; sitting on bench.",
+      "peopleAffected": 1,
+      "minutesAgo": 7,
+      "status": "open",
+      "source": "seed"
+    },
+    {
+      "id": "inc-seed-3",
+      "type": "harassment",
+      "stationId": "shivaji-nagar",
+      "note": "Repeated following reported by commuter near coach-door zone.",
+      "peopleAffected": 1,
+      "minutesAgo": 16,
+      "status": "assigned",
+      "source": "seed"
+    },
+    {
+      "id": "inc-seed-4",
+      "type": "hazard",
+      "stationId": "khadki",
+      "note": "Wet patch on stair landing, no warning sign placed.",
+      "peopleAffected": 0,
+      "minutesAgo": 24,
+      "status": "open",
+      "source": "seed"
+    }
+  ]
+}

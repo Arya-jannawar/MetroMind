@@ -1,0 +1,15 @@
+{
+  "$meta": "DEMO DATA — seeded street hazards for the SafeStreets view. Ages are relative minutes before first load.",
+  "hazards": [
+    { "id": "hz-seed-1", "type": "pothole", "nearStationId": "yerwada", "location": "Nagar Rd service lane near Aga Khan bridge", "severity": 4, "minutesAgo": 20, "source": "seed" },
+    { "id": "hz-seed-2", "type": "lighting", "nearStationId": "bund-garden", "location": "Footpath under the flyover, two lamps out", "severity": 3, "minutesAgo": 55, "source": "seed" },
+    { "id": "hz-seed-3", "type": "crossing", "nearStationId": "ruby-hall-clinic", "location": "Unmarked crossing at hospital main gate", "severity": 4, "minutesAgo": 95, "source": "seed" },
+    { "id": "hz-seed-4", "type": "pothole", "nearStationId": "kalyani-nagar", "location": "Lane toward Kalyani Nagar high street, 3 potholes", "severity": 2, "minutesAgo": 130, "source": "seed" },
+    { "id": "hz-seed-5", "type": "near-miss", "nearStationId": "pune-railway-station", "location": "Auto bay, bikes cutting across pedestrians", "severity": 5, "minutesAgo": 14, "source": "seed" },
+    { "id": "hz-seed-6", "type": "crossing", "nearStationId": "swargate", "location": "Bus terminus exit, signal too short", "severity": 3, "minutesAgo": 240, "source": "seed" },
+    { "id": "hz-seed-7", "type": "lighting", "nearStationId": "vanaz", "location": "Parking access road, unlit stretch", "severity": 2, "minutesAgo": 300, "source": "seed" },
+    { "id": "hz-seed-8", "type": "encroachment", "nearStationId": "mandai", "location": "Footpath fully blocked by market stalls", "severity": 3, "minutesAgo": 180, "source": "seed" },
+    { "id": "hz-seed-9", "type": "pothole", "nearStationId": "pcmc-bhavan", "location": "Roundabout near station gate 1", "severity": 3, "minutesAgo": 420, "source": "seed" },
+    { "id": "hz-seed-10", "type": "near-miss", "nearStationId": "shivaji-nagar", "location": "Exit 2, right-turning buses vs crossing commuters", "severity": 4, "minutesAgo": 65, "source": "seed" }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "$meta": "DEMO DATA — seeded community content. No PII; nicknames only. Ages are relative minutes before first load.",
+  "lostFound": [
+    {
+      "id": "lf-seed-1",
+      "kind": "found",
+      "item": "Black umbrella with wooden handle",
+      "stationId": "deccan-gymkhana",
+      "detail": "Handed to station staff, coach 2 seat area.",
+      "nickname": "Aditi K.",
+      "minutesAgo": 42,
+      "status": "open"
+    },
+    {
+      "id": "lf-seed-2",
+      "kind": "lost",
+      "item": "Blue JBL earphones case",
+      "stationId": "pune-railway-station",
+      "detail": "Somewhere between gate A and platform. Reward possible.",
+      "nickname": "Rohan S.",
+      "minutesAgo": 95,
+      "status": "open"
+    },
+    {
+      "id": "lf-seed-3",
+      "kind": "found",
+      "item": "Student ID card (SPPU)",
+      "stationId": "swargate",
+      "detail": "Turned in at the ticket counter.",
+      "nickname": "Meera D.",
+      "minutesAgo": 130,
+      "status": "open"
+    },
+    {
+      "id": "lf-seed-4",
+      "kind": "lost",
+      "item": "Green water bottle, steel, stickers",
+      "stationId": "kalyani-nagar",
+      "detail": "Left on down-platform bench around 6 PM.",
+      "nickname": "Sam J.",
+      "minutesAgo": 200,
+      "status": "open"
+    }
+  ],
+  "buddyRequests": [
+    {
+      "id": "bd-seed-1",
+      "nickname": "Prateek M.",
+      "stationId": "vanaz",
+      "direction": "toward city",
+      "timeMin": 505,
+      "windowMin": 25,
+      "note": "Daily office commute till Deccan.",
+      "minutesAgo": 15
+    },
+    {
+      "id": "bd-seed-2",
+      "nickname": "Sana R.",
+      "stationId": "vanaz",
+      "direction": "toward city",
+      "timeMin": 515,
+      "windowMin": 20,
+      "note": "Prefer company for the early stretch.",
+      "minutesAgo": 8
+    },
+    {
+      "id": "bd-seed-3",
+      "nickname": "Devika P.",
+      "stationId": "pune-railway-station",
+      "direction": "toward ramwadi",
+      "timeMin": 1080,
+      "windowMin": 30,
+      "note": "Evening ride back to Kalyani Nagar.",
+      "minutesAgo": 40
+    },
+    {
+      "id": "bd-seed-4",
+      "nickname": "Arjun T.",
+      "stationId": "pcmc-bhavan",
+      "direction": "toward city",
+      "timeMin": 510,
+      "windowMin": 25,
+      "note": "First week on metro, learning the interchange.",
+      "minutesAgo": 55
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-seed-1",
+      "title": "Metro Art Walk — Kasba Peth murals",
+      "stationId": "kasba-peth",
+      "whenLabel": "This Sunday, 8:00 AM",
+      "detail": "Heritage walk starting from exit 2, led by a local history group. DEMO listing.",
+      "minutesAgo": 260
+    },
+    {
+      "id": "ev-seed-2",
+      "title": "Lost & Found desk — extra hours",
+      "stationId": "district-court",
+      "whenLabel": "Weekdays till 9 PM",
+      "detail": "Staffed counter near gate 3 during peak season. DEMO listing.",
+      "minutesAgo": 600
+    },
+    {
+      "id": "ev-seed-3",
+      "title": "Carpool pairing drive at Ramwadi",
+      "stationId": "ramwadi",
+      "whenLabel": "Next Friday, 6:30 PM",
+      "detail": "Meetup for riders heading to Kharadi IT park. DEMO listing.",
+      "minutesAgo": 900
+    }
+  ],
+  "profiles": [
+    {
+      "nickname": "Arya J.",
+      "track": "Urban Mobility",
+      "skills": ["react", "typescript", "design", "maps"],
+      "lookingFor": ["python", "ml", "data"],
+      "idea": "Explainable route planner for Pune Metro",
+      "minutesAgo": 10
+    },
+    {
+      "nickname": "Nikhil V.",
+      "track": "Urban Mobility",
+      "skills": ["python", "ml", "data"],
+      "lookingFor": ["react", "design"],
+      "idea": "Crowd prediction from AFC gate counters",
+      "minutesAgo": 22
+    },
+    {
+      "nickname": "Ishita B.",
+      "track": "Civic & Community",
+      "skills": ["flutter", "firebase", "ui"],
+      "lookingFor": ["node", "api", "maps"],
+      "idea": "Ward-level civic issue tracker with photo triage",
+      "minutesAgo": 35
+    },
+    {
+      "nickname": "Kaustubh R.",
+      "track": "Urban Mobility",
+      "skills": ["node", "api", "postgres"],
+      "lookingFor": ["flutter", "ui"],
+      "idea": "GTFS realtime feed adapter for Maha-Metro",
+      "minutesAgo": 48
+    },
+    {
+      "nickname": "Tanvi G.",
+      "track": "Everyday Productivity",
+      "skills": ["design", "research", "content"],
+      "lookingFor": ["react", "typescript"],
+      "idea": "Multilingual first-rider onboarding assistant",
+      "minutesAgo": 70
+    },
+    {
+      "nickname": "Omkar S.",
+      "track": "Civic & Community",
+      "skills": ["react", "maps", "api"],
+      "lookingFor": ["ml", "data"],
+      "idea": "Road hazard heat mapping for Pune streets",
+      "minutesAgo": 90
+    },
+    {
+      "nickname": "Zoya H.",
+      "track": "Local Business",
+      "skills": ["nextjs", "payments", "ui"],
+      "lookingFor": ["content", "research"],
+      "idea": "Market-vendor discovery from Mandai station exits",
+      "minutesAgo": 120
+    },
+    {
+      "nickname": "Ved K.",
+      "track": "Urban Mobility",
+      "skills": ["ml", "python", "cv"],
+      "lookingFor": ["react", "maps"],
+      "idea": "Platform crowding from CCTV frame counts (privacy-safe)",
+      "minutesAgo": 150
+    }
+  ]
+}

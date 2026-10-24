@@ -1,0 +1,19 @@
+{
+  "$meta": "DEMO DATA — seeded crowd reports so the heatmap is alive at first load. Ages are relative minutes before first load.",
+  "reports": [
+    { "stationId": "district-court", "level": "packed", "minutesAgo": 6, "source": "seed" },
+    { "stationId": "district-court", "level": "moderate", "minutesAgo": 14, "source": "seed" },
+    { "stationId": "shivaji-nagar", "level": "packed", "minutesAgo": 4, "source": "seed" },
+    { "stationId": "shivaji-nagar", "level": "moderate", "minutesAgo": 22, "source": "seed" },
+    { "stationId": "pune-railway-station", "level": "moderate", "minutesAgo": 8, "source": "seed" },
+    { "stationId": "pune-railway-station", "level": "packed", "minutesAgo": 31, "source": "seed" },
+    { "stationId": "deccan-gymkhana", "level": "empty", "minutesAgo": 11, "source": "seed" },
+    { "stationId": "deccan-gymkhana", "level": "moderate", "minutesAgo": 38, "source": "seed" },
+    { "stationId": "swargate", "level": "moderate", "minutesAgo": 5, "source": "seed" },
+    { "stationId": "kalyani-nagar", "level": "empty", "minutesAgo": 17, "source": "seed" },
+    { "stationId": "pcmc-bhavan", "level": "moderate", "minutesAgo": 9, "source": "seed" },
+    { "stationId": "khadki", "level": "empty", "minutesAgo": 26, "source": "seed" },
+    { "stationId": "ramwadi", "level": "empty", "minutesAgo": 33, "source": "seed" },
+    { "stationId": "vanaz", "level": "moderate", "minutesAgo": 12, "source": "seed" }
+  ]
+}
