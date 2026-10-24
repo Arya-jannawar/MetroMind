@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0d11;
+  --surface: #10151b;
+  --surface-2: #161d26;
+  --line: #232c37;
+  --line-soft: #1a222b;
+  --ink: #e9edf2;
+  --ink-dim: #a7b2bf;
+  --muted: #77828f;
+  --aqua: #29c8cf;
+  --grape: #a183ff;
+  --ok: #46d39a;
+  --warn: #e8c34a;
+  --danger: #f26d6d;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+    background-image: radial-gradient(1100px 500px at 85% -10%, rgba(41, 200, 207, 0.05), transparent 60%),
+      radial-gradient(900px 420px at 8% 110%, rgba(161, 131, 255, 0.045), transparent 60%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    background: rgba(41, 200, 207, 0.28);
+  }
+  *:focus-visible {
+    outline: 2px solid var(--aqua);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  input[type="time"]::-webkit-calendar-picker-indicator,
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    filter: invert(0.7);
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #232c37;
+    border-radius: 8px;
+    border: 2px solid var(--bg);
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* mono micro-label, the signature of the whole UI */
+  .kicker {
+    @apply font-mono text-[10.5px] uppercase tracking-[0.16em] text-muted;
+  }
+  .card {
+    @apply rounded-card border border-line bg-surface;
+  }
+  .card-2 {
+    @apply rounded-card border border-line bg-surface2;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-3.5 py-2 text-sm font-medium transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-40;
+  }
+  .btn-primary {
+    @apply btn bg-aqua text-[#052324] hover:bg-[#4ad7dd];
+  }
+  .btn-grape {
+    @apply btn bg-grape text-[#170b33] hover:bg-[#b79dff];
+  }
+  .btn-ghost {
+    @apply btn border border-line bg-transparent text-ink hover:border-muted hover:bg-surface2;
+  }
+  .btn-quiet {
+    @apply btn text-dim hover:bg-surface2 hover:text-ink;
+  }
+  .btn-danger {
+    @apply btn border border-danger/40 text-danger hover:bg-danger/10;
+  }
+  .field {
+    @apply w-full rounded-md border border-line bg-bg px-3 py-2 text-sm text-ink placeholder:text-muted focus:border-aqua/60 focus:outline-none;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-surface2 px-2.5 py-1 font-mono text-[11px] text-dim;
+  }
+  .chip-on {
+    @apply chip border-aqua/50 bg-aqua/10 text-aqua;
+  }
+  .dot {
+    @apply inline-block h-1.5 w-1.5 rounded-full;
+  }
+  /* the dual-line stripe motif */
+  .stripe-line {
+    height: 3px;
+    background: linear-gradient(90deg, var(--aqua) 0 50%, var(--grape) 50% 100%);
+  }
+  .num {
+    @apply font-mono tabular-nums;
+  }
+  .link {
+    @apply text-aqua underline decoration-aqua/30 underline-offset-4 hover:decoration-aqua;
+  }
+  .dotted-bg {
+    background-image: radial-gradient(rgba(233, 237, 242, 0.05) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .heat-0 { background: rgba(38, 166, 110, 0.13); }
+  .heat-1 { background: rgba(202, 178, 60, 0.2); }
+  .heat-2 { background: rgba(224, 122, 52, 0.26); }
+  .heat-3 { background: rgba(226, 80, 80, 0.34); }
+  .anim-rise {
+    animation: rise-in 0.24s ease-out both;
+  }
+}
