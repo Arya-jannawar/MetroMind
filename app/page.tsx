@@ -5,6 +5,8 @@ import { Compass, HandHeart, MapPin, Route, Sparkles } from "lucide-react";
 import ActivityFeed from "@/components/ActivityFeed";
 import MetroMap from "@/components/MetroMap";
 import StatusStrip from "@/components/StatusStrip";
+import TeamCard from "@/components/TeamCard";
+import TeamRibbon from "@/components/TeamRibbon";
 import { Section } from "@/components/ui";
 import ClientOnly from "@/components/ClientOnly";
 import { blendScore } from "@/lib/crowd";
@@ -44,6 +46,7 @@ function HomeInner() {
 
   return (
     <div className="mx-auto max-w-6xl">
+      <TeamRibbon />
       <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="kicker mb-1.5">Mission control · {minToHHMM(nowMin)} IST (simulated)</p>
@@ -146,6 +149,10 @@ function HomeInner() {
             </div>
           </Section>
         </div>
+      </div>
+
+      <div className="mt-6">
+        <TeamCard />
       </div>
     </div>
   );

@@ -46,40 +46,77 @@ function stripe(ax, ay, bx, by, w, col) {
   }
 }
 
-stripe(140, 500, 760, 140, 42, AQUA);
-stripe(200, 610, 980, 320, 42, GRAPE); // different slope — must not be parallel
+// ── Team UrbanSync network mark (right side) ───────────────────────────
+// octagon of stations around the interchange hub, R = 170
+const CX = 880;
+const CY = 315;
+const R = 170;
+const OFF = Math.round(R * Math.SQRT1_2);
+const NET = [
+  [CX, CY - R], // N
+  [CX + OFF, CY - OFF], // NE
+  [CX + R, CY], // E
+  [CX + OFF, CY + OFF], // SE
+  [CX, CY + R], // S
+  [CX - OFF, CY + OFF], // SW
+  [CX - R, CY], // W
+  [CX - OFF, CY - OFF], // NW
+];
 
-// interchange ring at the visual crossing of the two stripes
-function intersect(a1, b1, a2, b2) {
-  const d1x = b1[0] - a1[0], d1y = b1[1] - a1[1];
-  const d2x = b2[0] - a2[0], d2y = b2[1] - a2[1];
-  const denom = d1x * d2y - d1y * d2x;
-  if (Math.abs(denom) < 1e-6) return null; // parallel — skip the ring
-  const t = ((a2[0] - a1[0]) * d2y - (a2[1] - a1[1]) * d2x) / denom;
-  return [a1[0] + t * d1x, a1[1] + t * d1y];
-}
-const ix = intersect([140, 500], [760, 140], [200, 610], [980, 320]);
-if (ix && Number.isFinite(ix[0]) && Number.isFinite(ix[1])) {
-  const [cx, cy] = ix;
-  for (let y = Math.floor(cy - 70); y <= Math.ceil(cy + 70); y++) {
-    for (let x = Math.floor(cx - 70); x <= Math.ceil(cx + 70); x++) {
-      const d = Math.hypot(x - cx, y - cy);
-      if (d <= 66 && d >= 44) set(x, y, ...WHITE);
-      else if (d <= 16) set(x, y, ...WHITE);
+function disc(cx, cy, r, col) {
+  for (let y = Math.floor(cy - r); y <= Math.ceil(cy + r); y++) {
+    for (let x = Math.floor(cx - r); x <= Math.ceil(cx + r); x++) {
+      if (Math.hypot(x - cx, y - cy) <= r) set(x, y, ...col);
     }
   }
 }
 
-// corner brand bars
-for (let x = 72; x < 232; x++) for (let y = 72; y < 82; y++) set(x, y, ...AQUA);
-for (let x = 72; x < 232; x++) for (let y = 88; y < 98; y++) set(x, y, ...GRAPE);
+function ringPx(cx, cy, r, w, col) {
+  for (let y = Math.floor(cy - r - w); y <= Math.ceil(cy + r + w); y++) {
+    for (let x = Math.floor(cx - r - w); x <= Math.ceil(cx + r + w); x++) {
+      const d = Math.hypot(x - cx, y - cy);
+      if (d <= r + w / 2 && d >= r - w / 2) set(x, y, ...col);
+    }
+  }
+}
 
-// wordmark blocks: M E T R O M I N D as simple bars (abstract, geometric)
+const DIM = [0x1a, 0x6b, 0x70]; // aqua at rest
+for (let i = 0; i < 8; i++) {
+  const [x2, y2] = NET[i];
+  stripe(CX, CY, x2, y2, 10, DIM); // spokes
+  const [xj, yj] = NET[(i + 1) % 8];
+  stripe(x2, y2, xj, yj, 10, DIM); // ring
+}
+for (const [a, b] of [[0, 3], [0, 5], [4, 1], [4, 7]]) {
+  const [x1, y1] = NET[a];
+  const [x2, y2] = NET[b];
+  stripe(x1, y1, x2, y2, 6, [0x14, 0x4a, 0x4e]); // long diagonals, dimmer
+}
+for (const [x, y] of NET) {
+  disc(x, y, 22, BG);
+  ringPx(x, y, 22, 8, AQUA);
+  disc(x, y, 7, WHITE);
+}
+disc(CX, CY, 52, BG);
+ringPx(CX, CY, 50, 11, WHITE);
+ringPx(CX, CY, 31, 8, AQUA);
+disc(CX, CY, 13, WHITE);
+
+// corner brand bars
+for (let x = 72; x < 262; x++) for (let y = 72; y < 84; y++) set(x, y, ...AQUA);
+for (let x = 72; x < 262; x++) for (let y = 96; y < 108; y++) set(x, y, ...GRAPE);
+
+// wordmark blocks: abstract ascending bars, bottom-left
 const bar = (x, y, w, h, col) => { for (let yy = y; yy < y + h; yy++) for (let xx = x; xx < x + w; xx++) set(xx, yy, ...col); };
-// H O M E-ish composition bottom-left: three ascending blocks
-bar(72, 520, 56, 38, WHITE);
-bar(140, 496, 56, 62, WHITE);
-bar(208, 472, 56, 86, AQUA);
+bar(84, 492, 78, 66, WHITE);
+bar(180, 452, 78, 106, WHITE);
+bar(276, 412, 78, 146, AQUA);
+// dotted ascent — three dots rising toward the mark
+for (const [dx, dy, r] of [[420, 430, 8], [492, 372, 10], [576, 314, 13]]) {
+  for (let y = dy - r; y <= dy + r; y++) for (let x = dx - r; x <= dx + r; x++) {
+    if (Math.hypot(x - dx, y - dy) <= r) set(x, y, ...AQUA);
+  }
+}
 
 function chunk(type, data) {
   const len = Buffer.alloc(4);
