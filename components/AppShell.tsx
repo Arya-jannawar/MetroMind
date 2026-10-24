@@ -31,6 +31,9 @@ function useDemoTicker() {
 
 function useServiceWorker() {
   useEffect(() => {
+    // skipped on the static GitHub Pages export (basePath hosting + cached
+    // shell adds risk without benefit for the demo)
+    if (process.env.NEXT_PUBLIC_BASE_PATH) return;
     if (process.env.NODE_ENV !== "production") return;
     if (!("serviceWorker" in navigator)) return;
     navigator.serviceWorker.register("/sw.js").catch(() => {

@@ -18,7 +18,12 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ??
+      (process.env.NEXT_PUBLIC_BASE_PATH
+        ? `https://arya-jannawar.github.io${process.env.NEXT_PUBLIC_BASE_PATH}/`
+        : "http://localhost:3000"),
+  ),
   title: {
     default: "MetroMind — Pune Metro commute copilot",
     template: "%s · MetroMind",

@@ -96,13 +96,25 @@ The non-obvious calls we made while building MetroMind in one day, in build orde
   clears live-injected conditions. Every simulated surface still carries its DEMO DATA label —
   live mode surfaces its own "live feed" badge instead.
 
-## Verification
+## Verification & deployment
 
 - **D20.** Verification loop: vitest suite green (engine + live-feed normalization), `next
   build` clean, then a full browser walkthrough (desktop + 390 px) with a console-error
   collector — zero console errors and zero horizontal scroll on all pages. Screenshots captured
   into `docs/screenshots/`.
-- **D21.** Not done (honest scope): production deployment to Vercel (needs a Vercel account
+- **D21.** Git history was committed in logical groups (scaffold → data → engine → tests → app →
+  AI → docs), conventional commits, no secrets, no force-push of shared branches.
+- **D22.** **Deployed to GitHub Pages** at `https://arya-jannawar.github.io/MetroMind/` via a
+  static export (`EXPORT_MODE=1` → `output: export` + `basePath: /MetroMind` + `trailingSlash`),
+  published to the `gh-pages` branch with `.nojekyll`. The export excludes server routes
+  (`app/api` is moved aside during the build); on Pages the client's AI/feed fetches fail and
+  the app runs its designed offline-AI template mode (badge shown). The manifest route needed
+  `dynamic = "force-static"` for export. Server mode (`npm run build && npm start`) remains the
+  full-stack path with GLM explanations and the live feed.
+- **D23.** Git Bash on Windows mangles `/MetroMind` env values (MSYS path conversion) — export
+  builds need `MSYS_NO_PATHCONV=1`, and the `.next` cache must be cleaned between server and
+  export builds or `readlink EINVAL` errors surface.
+- **D24.** Not done (honest scope): production deployment to Vercel (needs a Vercel account
   login); a GTFS-RT converter service and authority agreements (the JSON contract + docs are
   ready for one); PWA icons are SVG (`any` + `maskable`); `next-env.d.ts` is gitignored as
   generated.

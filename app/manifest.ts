@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
 
+// force-static: required for the GitHub Pages export build; harmless normally
+export const dynamic = "force-static";
+
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "MetroMind — Pune Metro commute copilot",

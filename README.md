@@ -9,9 +9,13 @@ it plans constraint-aware journeys across both lines, reasons over community cro
 live disruptions, explains every recommendation in plain language, and pairs it with crowd
 intelligence, safety triage, accessibility guidance and a commuter board.
 
+**🔴 Live: https://arya-jannawar.github.io/MetroMind/** (static deploy — runs in offline-AI
+template mode; the full-stack server adds GLM explanations and the live feed)
+
 > Built for **OpenAI DevDay Exchange — Metro Hackathon Pune** (Codex Dayline, one-day build
-> sprint on the metro), **Urban Mobility** track. Status: **local-runnable demo** that upgrades
-> to a live feed without code changes (see [Going live](#going-live-operators--authorities)).
+> sprint on the metro), **Urban Mobility** track. Status: **live static demo** at the link
+> above; the full-stack server (`npm start`) upgrades to GLM explanations and a live feed
+> without code changes (see [Going live](#going-live-operators--authorities)).
 
 ---
 
@@ -145,6 +149,20 @@ from the feed integration above.
 
 Deploy on Vercel: import the repo, add `OPENAI_API_KEY` or `ZAI_API_KEY` (+ `LIVE_FEED_URL` /
 `LIVE_API_KEY` when going live) as env vars, deploy. `npx vercel` works too.
+
+### GitHub Pages deploy (how the live link above is built)
+
+```bash
+mv app/api .api-backup                                        # export keeps no server routes
+rm -rf .next
+EXPORT_MODE=1 NEXT_PUBLIC_BASE_PATH=/MetroMind npm run build  # static export → out/
+mv .api-backup app/api
+touch out/.nojekyll                                           # skip Jekyll on GH Pages
+# then publish out/ to the gh-pages branch
+```
+
+On Pages the client's AI/feed calls fail their fetch and the app runs its designed offline-AI
+template mode (badged in the UI); the full-stack server path keeps everything.
 
 ## Roadmap
 
