@@ -1,0 +1,213 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Team UrbanSync — top-10 finalist, 4th place overall at OpenAI DevDay Exchange Metro Hackathon Pune">
+  <defs>
+    <pattern id="w-g2" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.2" cy="1.2" r="1.2" fill="#1b2430"/>
+    </pattern>
+    <radialGradient id="w-auA">
+      <stop offset="0" stop-color="#29c8cf" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#29c8cf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="w-auG">
+      <stop offset="0" stop-color="#a183ff" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#a183ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="w-auY">
+      <stop offset="0" stop-color="#f2b83b" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#f2b83b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="w-halo">
+      <stop offset="0" stop-color="#f2b83b" stop-opacity="0.34"/>
+      <stop offset="0.7" stop-color="#f2b83b" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#f2b83b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="w-gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe9a3"/>
+      <stop offset="0.5" stop-color="#f2b83b"/>
+      <stop offset="1" stop-color="#c9801a"/>
+    </linearGradient>
+    <linearGradient id="w-goldShine" gradientUnits="userSpaceOnUse" x1="338" y1="0" x2="900" y2="0">
+      <stop offset="0" stop-color="#f2b83b"/>
+      <stop offset="0.42" stop-color="#f2b83b"/>
+      <stop offset="0.5" stop-color="#fff6d8"/>
+      <stop offset="0.58" stop-color="#f2b83b"/>
+      <stop offset="1" stop-color="#f2b83b"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-560 0; 640 0" dur="4.8s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="w-stripe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f2b83b"/>
+      <stop offset="0.5" stop-color="#f2b83b"/>
+      <stop offset="0.5" stop-color="#a183ff"/>
+      <stop offset="1" stop-color="#a183ff"/>
+    </linearGradient>
+    <linearGradient id="w-sweepG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f2b83b" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#f2b83b" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#f2b83b" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="w-cupClip">
+      <rect x="25" y="18" width="110" height="14" rx="7"/>
+      <path d="M32 32 h96 v20 c0 30 -21 52 -48 52 s-48 -22 -48 -52 z"/>
+    </clipPath>
+    <filter id="w-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="w-soft3" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <style>
+    .w-wave{transform-box:fill-box;transform-origin:center;transform:scale(.5);opacity:0;animation:w-wave 3.3s ease-out infinite}
+    .w-bob{animation:w-bob 5.6s ease-in-out infinite}
+    .w-tw{opacity:0;animation:w-twinkle 2.7s ease-in-out infinite}
+    .w-cf{transform-box:fill-box;transform-origin:center;opacity:0;animation:w-fall linear infinite}
+    .w-cupshine{transform-box:fill-box;transform-origin:center;animation:w-cupshine 5s ease-in-out 1s infinite}
+    .w-glowPulse{animation:w-strokepulse 2.4s ease-in-out infinite alternate}
+    .w-pop{transform-box:fill-box;transform-origin:bottom center;transform:scaleY(0);animation:w-pop .5s cubic-bezier(.34,1.56,.64,1) forwards}
+    .w-star{transform-box:fill-box;transform-origin:center;animation:w-star 1.7s ease-in-out infinite alternate}
+    .w-aur{animation:w-aurdrift 13s ease-in-out infinite alternate}
+    .w-aur2{animation:w-aurdrift2 17s ease-in-out infinite alternate}
+    .w-aur3{animation:w-aurdrift3 15s ease-in-out infinite alternate}
+    .w-gridmove{animation:w-gridpan 7s linear infinite}
+    .w-shim{animation:w-sweep 9s ease-in-out infinite}
+    .w-sub{animation:w-subb 6s ease-in-out infinite alternate}
+    @keyframes w-pop{to{transform:scaleY(1)}}
+    @keyframes w-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    @keyframes w-wave{0%{transform:scale(.5);opacity:.55}70%{opacity:0}100%{transform:scale(3.1);opacity:0}}
+    @keyframes w-twinkle{0%,100%{opacity:0}50%{opacity:.95}}
+    @keyframes w-fall{0%{transform:translateY(-40px) rotate(0deg);opacity:0}8%{opacity:1}82%{opacity:1}100%{transform:translateY(380px) rotate(560deg);opacity:0}}
+    @keyframes w-cupshine{0%{transform:translateX(-60px) skewX(-16deg);opacity:0}10%{opacity:.9}55%{transform:translateX(300px) skewX(-16deg);opacity:0}100%{transform:translateX(300px);opacity:0}}
+    @keyframes w-strokepulse{from{stroke-opacity:.35}to{stroke-opacity:.95}}
+    @keyframes w-star{from{transform:scale(.85);opacity:.75}to{transform:scale(1.15);opacity:1}}
+    @keyframes w-aurdrift{from{transform:translate(0,0) scale(1)}to{transform:translate(-46px,26px) scale(1.18)}}
+    @keyframes w-aurdrift2{from{transform:translate(0,0) scale(1.1)}to{transform:translate(38px,-24px) scale(.94)}}
+    @keyframes w-aurdrift3{from{transform:translate(0,0) scale(.95)}to{transform:translate(-30px,-30px) scale(1.15)}}
+    @keyframes w-gridpan{to{transform:translateX(26px)}}
+    @keyframes w-sweep{0%{transform:translateX(-180px) skewX(-18deg)}55%,100%{transform:translateX(1420px) skewX(-18deg)}}
+    @keyframes w-subb{from{opacity:.7}to{opacity:1}}
+    @media (prefers-reduced-motion:reduce){
+      .w-wave,.w-bob,.w-tw,.w-cf,.w-cupshine,.w-glowPulse,.w-star,.w-aur,.w-aur2,.w-aur3,.w-gridmove,.w-shim,.w-sub{animation:none}
+      .w-wave{opacity:0}
+      .w-tw{opacity:.7}
+      .w-cf{opacity:.85}
+      .w-pop{transform:none}
+    }
+  </style>
+
+  <rect width="1200" height="320" fill="#0a0d11"/>
+
+  <!-- aurora ambience: teal, purple and celebration gold -->
+  <circle class="w-aur" cx="1010" cy="26" r="215" fill="url(#w-auA)" filter="url(#w-soft)"/>
+  <circle class="w-aur2" cx="130" cy="318" r="235" fill="url(#w-auG)" filter="url(#w-soft)"/>
+  <circle class="w-aur3" cx="960" cy="300" r="200" fill="url(#w-auY)" filter="url(#w-soft)"/>
+
+  <!-- drifting dot field -->
+  <g class="w-gridmove"><rect x="-26" y="0" width="1252" height="320" fill="url(#w-g2)"/></g>
+
+  <!-- brand edge, now with a gold ribbon -->
+  <rect x="0" y="0" width="4" height="320" fill="#f2b83b"/>
+  <rect x="6" y="0" width="2" height="320" fill="#29c8cf" opacity="0.8"/>
+  <rect x="10" y="0" width="1.5" height="320" fill="#a183ff" opacity="0.6"/>
+
+  <!-- twinkles -->
+  <g fill="#ffe9a3">
+    <circle class="w-tw" cx="330" cy="40" r="2" style="animation-delay:.2s"/>
+    <circle class="w-tw" cx="470" cy="28" r="1.6" style="animation-delay:1.1s"/>
+    <circle class="w-tw" cx="700" cy="44" r="2.2" style="animation-delay:.6s"/>
+    <circle class="w-tw" cx="905" cy="26" r="1.7" style="animation-delay:1.7s"/>
+    <circle class="w-tw" cx="1180" cy="120" r="2" style="animation-delay:2.2s"/>
+    <circle class="w-tw" cx="1148" cy="36" r="1.8" style="animation-delay:.9s"/>
+    <circle class="w-tw" cx="620" cy="300" r="1.7" style="animation-delay:1.4s"/>
+    <circle class="w-tw" cx="290" cy="290" r="1.6" style="animation-delay:2.5s"/>
+  </g>
+
+  <!-- confetti rain -->
+  <g>
+    <rect class="w-cf" x="70"   y="-16" width="6" height="11" rx="1.5" fill="#29c8cf" style="animation-duration:5.4s;animation-delay:.2s"/>
+    <rect class="w-cf" x="150"  y="-16" width="7" height="12" rx="1.5" fill="#f2b83b" style="animation-duration:6.6s;animation-delay:1.8s"/>
+    <rect class="w-cf" x="255"  y="-16" width="6" height="10" rx="1.5" fill="#a183ff" style="animation-duration:4.9s;animation-delay:.9s"/>
+    <rect class="w-cf" x="430"  y="-16" width="6" height="12" rx="1.5" fill="#f0731f" style="animation-duration:7.2s;animation-delay:2.6s"/>
+    <rect class="w-cf" x="545"  y="-16" width="7" height="11" rx="1.5" fill="#00a883" style="animation-duration:5.8s;animation-delay:1.1s"/>
+    <rect class="w-cf" x="665"  y="-16" width="6" height="12" rx="1.5" fill="#f2b83b" style="animation-duration:6.1s;animation-delay:3.4s"/>
+    <rect class="w-cf" x="775"  y="-16" width="6" height="10" rx="1.5" fill="#29c8cf" style="animation-duration:5.1s;animation-delay:.5s"/>
+    <rect class="w-cf" x="885"  y="-16" width="7" height="12" rx="1.5" fill="#a183ff" style="animation-duration:6.9s;animation-delay:2.1s"/>
+    <rect class="w-cf" x="955"  y="-16" width="6" height="11" rx="1.5" fill="#f2b83b" style="animation-duration:5.6s;animation-delay:1.5s"/>
+    <rect class="w-cf" x="1040" y="-16" width="6" height="12" rx="1.5" fill="#f0731f" style="animation-duration:6.4s;animation-delay:.7s"/>
+    <rect class="w-cf" x="1125" y="-16" width="7" height="11" rx="1.5" fill="#29c8cf" style="animation-duration:5.2s;animation-delay:2.9s"/>
+    <rect class="w-cf" x="1185" y="-16" width="6" height="10" rx="1.5" fill="#00a883" style="animation-duration:7.4s;animation-delay:1.2s"/>
+    <circle class="w-cf" cx="110"  cy="-10" r="3.2" fill="#f2b83b" style="animation-duration:6.2s;animation-delay:2.4s"/>
+    <circle class="w-cf" cx="355"  cy="-10" r="2.6" fill="#29c8cf" style="animation-duration:5.5s;animation-delay:3.1s"/>
+    <circle class="w-cf" cx="830"  cy="-10" r="3"   fill="#a183ff" style="animation-duration:6.8s;animation-delay:.4s"/>
+    <circle class="w-cf" cx="1090" cy="-10" r="2.6" fill="#f2b83b" style="animation-duration:5.9s;animation-delay:1.9s"/>
+  </g>
+
+  <!-- ══ the trophy, on a breathing gold halo ══ -->
+  <g transform="translate(48,70) scale(1.15)">
+    <circle cx="80" cy="86" r="92" fill="url(#w-halo)"/>
+
+    <circle class="w-wave" cx="80" cy="62" r="26" fill="none" stroke="#f2b83b" stroke-width="2" style="animation-delay:0s"/>
+    <circle class="w-wave" cx="80" cy="62" r="26" fill="none" stroke="#f2b83b" stroke-width="2" style="animation-delay:1.1s"/>
+    <circle class="w-wave" cx="80" cy="62" r="26" fill="none" stroke="#f2b83b" stroke-width="2" style="animation-delay:2.2s"/>
+
+    <g class="w-bob">
+      <!-- handles -->
+      <path d="M32 44 H14 C2 44 -6 54 -6 64 C-6 78 6 88 24 88" fill="none" stroke="url(#w-gold)" stroke-width="7" stroke-linecap="round"/>
+      <path d="M128 44 H146 C158 44 166 54 166 64 C166 78 154 88 136 88" fill="none" stroke="url(#w-gold)" stroke-width="7" stroke-linecap="round"/>
+      <!-- cup -->
+      <rect x="25" y="18" width="110" height="14" rx="7" fill="url(#w-gold)"/>
+      <path d="M32 32 h96 v20 c0 30 -21 52 -48 52 s-48 -22 -48 -52 z" fill="url(#w-gold)"/>
+      <!-- inset star -->
+      <polygon class="w-star" points="80,49 83.3,57.5 92.4,58 85.3,63.7 87.6,72.5 80,67.6 72.4,72.5 74.7,63.7 67.6,58 76.7,57.5" fill="#8a5a00" opacity="0.9"/>
+      <!-- travelling shine, clipped to the cup -->
+      <g clip-path="url(#w-cupClip)">
+        <rect class="w-cupshine" x="-30" y="6" width="34" height="140" fill="#fffbe9" opacity="0.85" filter="url(#w-soft3)"/>
+      </g>
+      <!-- stem, collar and base -->
+      <path d="M72 104 h16 l4 20 h-24 z" fill="url(#w-gold)"/>
+      <rect x="58" y="124" width="44" height="8" rx="3" fill="url(#w-gold)"/>
+      <path d="M50 132 h60 l7 14 h-74 z" fill="url(#w-gold)"/>
+      <rect x="40" y="146" width="80" height="10" rx="4" fill="url(#w-gold)"/>
+    </g>
+  </g>
+
+  <!-- ══ the result ══ -->
+  <text x="338" y="84" font-family="'IBM Plex Mono',ui-monospace,Consolas,monospace" font-size="12.5" letter-spacing="1.4" fill="#77828f">OPENAI DEVDAY EXCHANGE · METRO HACKATHON PUNE · URBAN MOBILITY TRACK</text>
+
+  <text x="336" y="146" font-family="'IBM Plex Sans','Segoe UI',Verdana,sans-serif" font-size="54" font-weight="700" letter-spacing="3" fill="url(#w-goldShine)">TOP 10 FINALIST</text>
+
+  <g font-family="'IBM Plex Mono',ui-monospace,Consolas,monospace" font-size="13" letter-spacing="1.2">
+    <rect x="338" y="170" width="200" height="32" rx="16" fill="#f2b83b" fill-opacity="0.1"/>
+    <rect class="w-glowPulse" x="338" y="170" width="200" height="32" rx="16" fill="none" stroke="#f2b83b"/>
+    <text x="360" y="191" fill="#ffd76a">4TH PLACE OVERALL</text>
+    <rect x="554" y="170" width="176" height="32" rx="16" fill="#29c8cf" fill-opacity="0.08"/>
+    <rect class="w-glowPulse" x="554" y="170" width="176" height="32" rx="16" fill="none" stroke="#29c8cf" style="animation-delay:1.2s"/>
+    <text x="576" y="191" fill="#5adde2">TEAM URBANSYNC</text>
+  </g>
+
+  <!-- underline stripe with a running spark -->
+  <rect x="338" y="224" width="380" height="4" rx="2" fill="url(#w-stripe)"/>
+  <rect x="338" y="224" width="60" height="4" rx="2" fill="#fff8e0" filter="url(#w-soft3)">
+    <animate attributeName="x" values="338;658;338" dur="6s" repeatCount="indefinite"/>
+  </rect>
+
+  <text x="338" y="260" font-family="'IBM Plex Sans','Segoe UI',Verdana,sans-serif" font-size="15" fill="#9aa5b1">Arya Jannawar · Siddhant Pardeshi · Avani Jannawar</text>
+  <text class="w-sub" x="338" y="288" font-family="'IBM Plex Sans','Segoe UI',Verdana,sans-serif" font-size="14" font-style="italic" fill="#77828f">State the goal. Read the reasoning. — now with a podium-adjacent finish.</text>
+
+  <!-- ══ the podium, with a glowing 4th ══ -->
+  <g font-family="'IBM Plex Mono',ui-monospace,Consolas,monospace" font-size="12" text-anchor="middle">
+    <rect class="w-pop" x="1032" y="250" width="30" height="42" rx="3" fill="#3a4653" style="animation-delay:.9s"/>
+    <text x="1047" y="243" fill="#b0793f" font-weight="700">3</text>
+    <rect class="w-pop" x="1068" y="236" width="30" height="56" rx="3" fill="#4a5468" style="animation-delay:.6s"/>
+    <text x="1083" y="229" fill="#c9ced6" font-weight="700">2</text>
+    <rect class="w-pop" x="1104" y="222" width="30" height="70" rx="3" fill="#6b5a9e" style="animation-delay:.3s"/>
+    <text x="1119" y="215" fill="#ffd76a" font-weight="700">1</text>
+    <rect class="w-pop" x="1146" y="252" width="30" height="40" rx="3" fill="#29c8cf" fill-opacity="0.14" style="animation-delay:1.2s"/>
+    <rect class="w-glowPulse" x="1146" y="252" width="30" height="40" rx="3" fill="none" stroke="#29c8cf" stroke-width="1.6"/>
+    <text x="1161" y="246" fill="#5adde2" font-weight="700" font-size="13">4</text>
+    <circle class="w-tw" cx="1161" cy="238" r="2.6" fill="#ffd76a" style="animation-delay:.5s"/>
+    <circle class="w-tw" cx="1144" cy="242" r="1.6" fill="#ffe9a3" style="animation-delay:1.6s"/>
+  </g>
+
+  <!-- shimmer across the whole banner -->
+  <rect class="w-shim" x="-160" y="-20" width="130" height="360" fill="url(#w-sweepG)"/>
+</svg>

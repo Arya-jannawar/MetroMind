@@ -1,0 +1,43 @@
+name: Generate the contribution snake
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * *" # daily refresh
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate snake SVGs
+        uses: Platane/snk/svg-only-action@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+
+      - name: Commit snake to assets/
+        run: |
+          mkdir -p assets
+          cp dist/github-snake.svg assets/github-snake.svg
+          cp dist/github-snake-dark.svg assets/github-snake-dark.svg
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          if git diff --cached --quiet; then
+            echo "No snake changes"
+          else
+            git commit -m "chore: refresh contribution snake [skip ci]"
+            git push
+          fi

@@ -2,7 +2,17 @@
   <img src="docs/assets/banner.svg" alt="MetroMind — an AI commute copilot for the Pune Metro, by Team UrbanSync" width="100%" />
 </p>
 
+<p align="center">
+  <img src="docs/assets/winner-banner.svg" alt="Team UrbanSync — top-10 finalist, 4th place overall at OpenAI DevDay Exchange Metro Hackathon Pune" width="100%" />
+</p>
+
 # MetroMind — the Pune Metro AI super-app
+
+<p align="center">
+  <img alt="Top 10 Finalist" src="https://img.shields.io/badge/%F0%9F%8F%86%20TOP%2010%20FINALIST-29c8cf?style=for-the-badge&labelColor=0a0d11" />
+  <img alt="4th Place Overall" src="https://img.shields.io/badge/%F0%9F%8F%85%204TH%20PLACE%20OVERALL-a183ff?style=for-the-badge&labelColor=0a0d11" />
+  <img alt="Urban Mobility Track" src="https://img.shields.io/badge/%F0%9F%9A%87%20URBAN%20MOBILITY%20TRACK-3a4653?style=for-the-badge&labelColor=0a0d11" />
+</p>
 
 **Tell it your goal. Read the reasoning.** MetroMind is a commute copilot for the Pune Metro:
 it plans constraint-aware journeys across both lines, reasons over community crowd reports and
@@ -13,7 +23,8 @@ intelligence, safety triage, accessibility guidance and a commuter board.
 template mode; the full-stack server adds GLM explanations and the live feed)
 
 > Built for **OpenAI DevDay Exchange — Metro Hackathon Pune** (Codex Dayline, one-day build
-> sprint on the metro), **Urban Mobility** track. Status: **live static demo** at the link
+> sprint on the metro), **Urban Mobility** track — **🏆 shortlisted to the top 10, finished
+> 4th place overall**. Status: **live static demo** at the link
 > above; the full-stack server (`npm start`) upgrades to GLM explanations and a live feed
 > without code changes (see [Going live](#going-live-operators--authorities)).
 
@@ -27,6 +38,16 @@ template mode; the full-stack server adds GLM explanations and the live feed)
 <a href="https://github.com/Arya-jannawar/MetroMind/releases/tag/v1.0.0">Watch the video</a>
 · chapters: copilot killer query, the live disruption moment, CrowdCast, Rescue Grid,
 Community, the multilingual guide, and connecting a live feed.</p>
+
+## 🏆 Achievements
+
+At **OpenAI DevDay Exchange — Metro Hackathon Pune** (Urban Mobility track), Team UrbanSync's
+MetroMind was shortlisted to the **top 10** and finished **4th place overall**:
+
+- **🥇 Top-10 finalist** — picked for the final judging shortlist from the full hackathon field
+- **🏅 4th place overall** — the final ranking at DevDay Exchange, Urban Mobility track
+- **🚇 Built in one day** — on and around the Aqua Line, with every number explained and every
+  claim honest
 
 ---
 
@@ -183,8 +204,8 @@ multimodal (PMPML/BRTS) routing · photo verification for SafeStreets.
 
 ## Team UrbanSync
 
-Built in one day at **OpenAI DevDay Exchange — Metro Hackathon Pune**, on and around the
-Aqua Line, by:
+Built in one day at **OpenAI DevDay Exchange — Metro Hackathon Pune** — top-10 finalist,
+4th place overall 🏆 — on and around the Aqua Line, by:
 
 **Arya Jannawar** · **Siddhant Pardeshi** · **Avani Jannawar**
 
@@ -195,6 +216,16 @@ Aqua Line, by:
 | On stage at DevDay Exchange | Wristbands on, mid-sprint |
 |---|---|
 | <img src="docs/assets/team-stage.jpg" alt="Team UrbanSync on stage at the DevDay Exchange community event" width="420" /> | <img src="docs/assets/wristbands.jpg" alt="Team UrbanSync wristbands during the build" width="420" /> |
+
+## ⚡ The contribution snake
+
+An animated snake circles the walls of this repo's contribution graph, regenerated on every
+push to `main` by [`.github/workflows/snake.yml`](.github/workflows/snake.yml):
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/github-snake-dark.svg" />
+  <img src="assets/github-snake.svg" alt="Animated snake looping over the contribution graph" width="100%" />
+</picture>
 
 ## License
 
