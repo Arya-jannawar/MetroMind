@@ -202,12 +202,18 @@ GTFS-RT converter service (the JSON contract is ready) · AFC-gate-based crowdin
 dashboards for the rescue grid · full HI/MR app-wide i18n · PWA offline trip caching ·
 multimodal (PMPML/BRTS) routing · photo verification for SafeStreets.
 
-## Team UrbanSync
+## ⭐ Team MetroMind — UrbanSync
+
+<p align="center">
+  <img src="docs/assets/team-highlight.svg" alt="Team MetroMind — Arya Jannawar, Siddhant Pardeshi, Avani Jannawar — top-10 finalist, 4th place overall at OpenAI DevDay Exchange Metro Hackathon Pune" width="100%" />
+</p>
 
 Built in one day at **OpenAI DevDay Exchange — Metro Hackathon Pune** — top-10 finalist,
 4th place overall 🏆 — on and around the Aqua Line, by:
 
-**Arya Jannawar** · **Siddhant Pardeshi** · **Avani Jannawar**
+**Arya Jannawar** ([@Arya-jannawar](https://github.com/Arya-jannawar)) ·
+**Siddhant Pardeshi** ([@siddhant-pardeshi](https://github.com/siddhant-pardeshi)) ·
+**Avani Jannawar** ([@Avani376](https://github.com/Avani376))
 
 <p align="center">
   <img src="docs/assets/event-banner.svg" alt="OpenAI DevDay Exchange Community Event — Metro Hackathon: Pune" width="100%" />
