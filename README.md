@@ -229,9 +229,9 @@ Built in one day at **OpenAI DevDay Exchange — Metro Hackathon Pune** — top-
   <img src="docs/assets/pcmc-metro-banner.svg" alt="A Purple Line metro glides through the night toward PCMC Bhavan — Codex Dayline, Pune Metro" width="100%" />
 </p>
 
-Twenty-four frames and four clips from Codex Dayline — the dawn check-in, the build on board
-the Aqua Line, the stage, and the celebration after. Color-graded from the team's phone camera
-roll; full clips with sound live in [`docs/media/clips/`](docs/media/clips/).
+Twenty-five frames and four clips from Codex Dayline — the dawn check-in, the build on board
+the Aqua Line, the stage, the celebration after, and the final leaderboard. Color-graded from
+the team's phone camera roll; full clips with sound live in [`docs/media/clips/`](docs/media/clips/).
 
 ### 📸 Photo walk
 
@@ -249,7 +249,7 @@ roll; full clips with sound live in [`docs/media/clips/`](docs/media/clips/).
 | <img src="docs/media/gallery/18-morning-circle.jpg" alt="The morning huddle" width="100%" /><sub>the morning huddle</sub> | <img src="docs/media/gallery/19-inside-metro-teambuild.jpg" alt="Team building inside the metro, shoulder to shoulder" width="100%" /><sub>the build, shoulder to shoulder</sub> |
 | <img src="docs/media/gallery/20-exit-banner-team.jpg" alt="Team click under the exit banner" width="100%" /><sub>team click under the banner</sub> | <img src="docs/media/gallery/21-stage-front.jpg" alt="At the front of the stage" width="100%" /><sub>front of the stage</sub> |
 | <img src="docs/media/gallery/22-stage-click.jpg" alt="A quick click at the stage" width="100%" /><sub>a quick click at the stage</sub> | <img src="docs/media/gallery/23-exit-teaming.jpg" alt="Heading out, team intact" width="100%" /><sub>heading out, team intact</sub> |
-| <img src="docs/media/gallery/24-team-day-one.jpg" alt="Team UrbanSync, day one" width="100%" /><sub>Team UrbanSync, day one</sub> | |
+| <img src="docs/media/gallery/24-team-day-one.jpg" alt="Team UrbanSync, day one" width="100%" /><sub>Team UrbanSync, day one</sub> | <img src="docs/media/gallery/25-leaderboard.jpg" alt="Final DevDay Exchange leaderboard — MetroMind at rank 4 with 84 points, our row outlined in aqua" width="100%" /><sub>the final board — MetroMind at №4 · 84 pts · <a href="docs/media/gallery/25-leaderboard-original.jpg">untouched original</a></sub> |
 
 ### 🎞️ On-board clips
 
