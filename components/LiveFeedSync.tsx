@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { withBase } from "@/lib/basePath";
 import { feedToLiveState } from "@/lib/livefeed";
 import { useIntegrationsStore } from "@/store/integrations";
 import { useLiveStore } from "@/store/live";
@@ -30,7 +31,7 @@ export default function LiveFeedSync() {
 
     const sync = async () => {
       try {
-        const res = await fetch("/api/live", {
+        const res = await fetch(withBase("/api/live"), {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ endpoint, apiKey: creds.current.apiKey, keyHeader: creds.current.keyHeader }),

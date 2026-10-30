@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { CheckCircle2, KeyRound, Radio, XCircle } from "lucide-react";
 import { DemoNote, PageHeader, Segmented, Section } from "@/components/ui";
+import { withBase } from "@/lib/basePath";
 import { useIntegrationsStore } from "@/store/integrations";
 
 const FEED_SAMPLE = `{
@@ -39,7 +40,7 @@ function LiveFeedCard() {
     setTesting(true);
     setResult(null);
     try {
-      const res = await fetch("/api/live", {
+      const res = await fetch(withBase("/api/live"), {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ endpoint: store.endpoint, apiKey: store.apiKey, keyHeader: store.keyHeader }),

@@ -1,4 +1,5 @@
 import { Section } from "@/components/ui";
+import { withBase } from "@/lib/basePath";
 
 const MEMBERS = ["Arya Jannawar", "Siddhant Pardeshi", "Avani Jannawar"];
 
@@ -27,7 +28,7 @@ export default function TeamCard() {
         <div className="relative hidden w-44 shrink-0 sm:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/team-stage.jpg"
+            src={withBase("/team-stage.jpg")}
             alt="Team UrbanSync on stage at the DevDay Exchange community event"
             className="h-full w-full object-cover object-[center_30%]"
             loading="lazy"

@@ -1,6 +1,5 @@
 import { PARAMS, stationName } from "./data";
 import { BAND_META, bandOf } from "./crowd";
-import { inr } from "./fare";
 import type { RoutePlan } from "./types";
 import { minToHHMM } from "./time";
 
