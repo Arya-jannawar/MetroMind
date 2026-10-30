@@ -118,3 +118,13 @@ The non-obvious calls we made while building MetroMind in one day, in build orde
   login); a GTFS-RT converter service and authority agreements (the JSON contract + docs are
   ready for one); PWA icons are SVG (`any` + `maskable`); `next-env.d.ts` is gitignored as
   generated.
+- **D25.** **GitHub Pages asset-path rule:** every asset referenced outside Next's Link/Image
+  pipeline must go through `withBase()` (`lib/basePath.ts`) — root-absolute URLs like
+  `/team-stage.jpg` 404 under the `/MetroMind` basePath (this broke the Team UrbanSync photo on
+  the live site; fixed). Same treatment applied to the `/api/live` fetches. Verified live with a
+  capture-phase resource-error listener (catches 404s that a console-error check misses).
+- **D26.** **`.nojekyll` is mandatory on the `gh-pages` branch** and must be re-added after
+  every clean export build (`next build` wipes `out/`). Without it, GitHub Pages runs Jekyll,
+  which silently excludes the underscore-prefixed `_next/` directory — the site loads unstyled
+  and every asset 404s while raw file checks look healthy. Bit us once; the Pages build API
+  (`/pages/builds/latest` → commit sha) is how we confirm the fix actually deployed.
